@@ -1,0 +1,32 @@
+#! /bin/bash
+
+# This script emulates cssh(clusterssh) using the tmux panes.
+# hostnames should be passed as arguments to the script
+
+# check if hostnames are passed
+if [ $# == 0 ];then
+    echo "Error : requires list of hostnames as arguments"
+    exit 1
+# check if atleast two hostnames is passed
+elif [ $# -le 1 ];then
+    echo "Error : requires atleast two hostnames"
+    exit 1
+fi
+
+# fetch the first argument to pass on to pane '0' and shift
+firsthost=$1
+shift
+
+# for each host split pane and ssh to the host
+for host in $*
+do
+    tmux split-window "ssh $host"   # split panes and invoke ssh to the new pane
+    tmux select-layout tiled        # auto re-size panes
+done
+
+# select the pane '0' and invoke ssh for the first host
+tmux select-pane -t 0
+tmux send-keys "ssh $firsthost" C-m
+
+# synchronize the keystrokes across all the panes
+tmux set-window-option synchronize-panes on

@@ -1,0 +1,19 @@
+#! /bin/bash
+
+# open a parent tmux session with session-name as the passed argument and disconnect
+tmux new-session -d -s work 'top -n 10'
+tmux rename-window 'home'
+
+# open few default child tmux sessions
+tmux new-window -t work:1 -n 'home'
+tmux new-window -t work:2 -n 'gitrepo'
+tmux new-window -t work:3 -n 'openshift'
+
+
+# select the window and create panes
+tmux select-window -t work:1
+tmux split-window -v -p 70 'bc'
+tmux split-window -h -p 70
+
+# Connect back to the session
+tmux -2 attach-session -t work

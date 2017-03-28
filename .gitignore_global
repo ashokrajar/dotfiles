@@ -1,0 +1,15 @@
+*~
+.DS_Store
+.idea/
+atlassian-ide-plugin.xml
+.cvsrc
+.local_workspecalias
+.bash_workspecalias
+.user_env_pass
+.ssh/id_rsa
+.ssh/id_dsa
+.ssh/known_hosts
+.ssh/*.pem
+.idea/
+atlassian-ide-plugin.xml
+

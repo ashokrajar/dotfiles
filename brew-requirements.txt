@@ -1,0 +1,2 @@
+tmux terraform python python3 pypy pypy3 htop hugo tree ansible saltstack autoenv git heroku s3cmd wget hping node awscli legit
+macvim --with-lua --env-std --with-override-system-vim

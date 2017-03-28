@@ -1,0 +1,16 @@
+#! /bin/bash
+
+# unset the Parent tmux session, so child tmux can be invoked
+unset TMUX
+
+# open a new tmux session with session-name as the passed argument and disconnect
+tmux new-session -d -s $1
+
+# default open few windows
+tmux new-window -t $1:1
+tmux new-window -t $1:2
+tmux new-window -t $1:3
+
+# select the window ad connect back to the sesson 
+tmux select-window -t $1:3
+tmux -2 attach-session -t $1
