@@ -16,7 +16,7 @@
 
 # golang
 export GOROOT=/usr/local/opt/go/libexec
-export GOPATH=/usr/local/opt/go/gopath:/Users/ashokraja/workspace/code/gopath
+export GOPATH=/usr/local/opt/go/gopath:/Users/ashokraja/workspace/code/gopath:/Volumes/MDRIVE/workspace/code/gopath
 export GOOS="darwin"
 
 # jEnv
@@ -43,7 +43,7 @@ export LANG=en_US.UTF-8
 # archey -c
 
 # added by travis gem
-[ -f /Users/ashokraja/.travis/travis.sh ] && source /Users/ashokraja/.travis/travis.sh
+[ -f /Users/ashok.raja/.travis/travis.sh ] && source /Users/ashok.raja/.travis/travis.sh
 
 # [[ -s "/Users/ashokraja/.gvm/scripts/gvm" ]] && source "/Users/ashokraja/.gvm/scripts/gvm"
 
@@ -53,12 +53,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # Chef
 # eval "$(chef shell-init zsh)"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f /Users/ashokraja/Downloads/google-cloud-sdk/path.zsh.inc ]; then
-  source '/Users/ashokraja/Downloads/google-cloud-sdk/path.zsh.inc'
-fi
 
-# The next line enables shell command completion for gcloud.
-if [ -f /Users/ashokraja/Downloads/google-cloud-sdk/completion.zsh.inc ]; then
-  source '/Users/ashokraja/Downloads/google-cloud-sdk/completion.zsh.inc'
-fi
+# Powerlevel9k Cutomization
+[ -f ${HOME}/.powerlevel9k_custom ] && source ${HOME}/.powerlevel9k_custom

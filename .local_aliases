@@ -14,3 +14,6 @@ alias psstate='ps -axo pid,comm,stat --sort=-stat'
 
 # Docker
 alias drm_notrunning="docker ps -a | grep Exited | awk '{print $1}' | xargs docker rm"
+
+# SPF Vim
+alias spfupdate='vim +BundleInstall! +BundleClean +q'

@@ -3,9 +3,5 @@
 .local_workspecalias
 .bash_workspecalias
 .user_env_pass
-.ssh/id_rsa
-.ssh/id_dsa
-.ssh/known_hosts
-.ssh/*.pem
-.idea/
-atlassian-ide-plugin.xml
+.ssh/
+.env

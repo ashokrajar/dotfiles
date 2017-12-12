@@ -1,8 +1,59 @@
-*~
+# OSX       taken from: https://github.com/github/gitignore/blob/master/Global/OSX.gitignore
+# ----------------------------------------------------------------------------------------------
 .DS_Store
+# Thumbnails
+._*
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Windows   taken from: https://github.com/github/gitignore/blob/master/Global/Windows.gitignore
+# ----------------------------------------------------------------------------------------------
+# Windows image file caches
+Thumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Tags      taken from: https://github.com/github/gitignore/blob/master/Global/Tags.gitignore
+# ----------------------------------------------------------------------------------------------
+# Ignore tags created by etags, ctags, gtags (GNU global) and cscope
+TAGS
+!TAGS/
+tags
+!tags/
+.tags
+.tags1
+gtags.files
+GTAGS
+GRTAGS
+GPATH
+cscope.files
+cscope.out
+cscope.in.out
+cscope.po.out
+
+# Vim       taken from: https://github.com/github/gitignore/blob/master/Global/vim.gitignore
+# ----------------------------------------------------------------------------------------------
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+# SASS
+# ----------------------------------------------------------------------------------------------
+.sass-cache
+
+# IDE
+# ----------------------------------------------------------------------------------------------
 .idea/
 atlassian-ide-plugin.xml
-.cvsrc
+.vscode/
+
+# Custom
+# ----------------------------------------------------------------------------------------------
 .local_workspecalias
 .bash_workspecalias
 .user_env_pass
@@ -10,6 +61,4 @@ atlassian-ide-plugin.xml
 .ssh/id_dsa
 .ssh/known_hosts
 .ssh/*.pem
-.idea/
-atlassian-ide-plugin.xml
-
+.env
