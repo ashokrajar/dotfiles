@@ -12,6 +12,9 @@
 # Windows image file caches
 Thumbs.db
 
+# MacOS 
++.DS_Store
+
 # Folder config file
 Desktop.ini
 

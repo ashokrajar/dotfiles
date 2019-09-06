@@ -43,12 +43,10 @@ typeset -gU cdpath fpath mailpath path
 
 # Set the list of directories that Zsh searches for programs.
 path=(
-  ~/.rvm/gems/ruby-2.2.1/bin
-  ~/.rvm/bin
-  ~/.jenv/bin
   ~/bin
-  ~/br/prodops/tools
-  /usr/local/opt/go/gopath/bin
+  ~/Downloads/google-cloud-sdk/bin
+  ~/workspace/code/gopath/bin
+  ~/.pyenv/bin
   /usr/local/opt/go/libexec/bin
   /usr/local/{bin,sbin}
   $path
