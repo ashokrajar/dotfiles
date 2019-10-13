@@ -17,3 +17,6 @@ alias drm_notrunning="docker ps -a | grep Exited | awk '{print $1}' | xargs dock
 
 # SPF Vim
 alias spfupdate='vim +BundleInstall! +BundleClean +q'
+
+# K8
+alias kc='kubectl'
