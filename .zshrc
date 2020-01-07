@@ -15,10 +15,18 @@ setopt ALIAS_FUNC_DEF
 [[ -f "$HOME/.local_workspecalias" ]] && source "$HOME/.local_workspecalias"
 [[ -f "$HOME/.user_env_pass" ]] && source "$HOME/.user_env_pass"
 
+# LANG 
+export LC_ALL=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # golang
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/gopath
 export GOOS="darwin"
+
+[[ -s "/Users/ashokraja/.gvm/scripts/gvm" ]] && source "/Users/ashokraja/.gvm/scripts/gvm"
+
 
 # jEnv
 export PATH="$HOME/.jenv/bin:$PATH"
@@ -31,10 +39,6 @@ export JAVA_HOME="$(jenv javahome)"
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-
-export LC_ALL=en_US.UTF-8
-export LC_CTYPE=en_US.UTF-8
-export LANG=en_US.UTF-8
 
 # ZSH Auto complete
 [[ -f "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && source "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
@@ -49,7 +53,7 @@ export LANG=en_US.UTF-8
 [[ -f "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc" ]] && source "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc"
 
 # python autoenv
-[[ -f "/usr/local/opt/autoenv/activate.sh" ]] && source "/usr/local/opt/autoenv/activate.sh"
+#[[ -f "/usr/local/opt/autoenv/activate.sh" ]] && source "/usr/local/opt/autoenv/activate.sh"
 
 # pyenv
 eval "$(pyenv init -)"
@@ -57,13 +61,11 @@ eval "$(pyenv init -)"
 # Docker
 # eval "$(docker-machine env codengine)"
 
-# login banner
-# archey -c
+# K8
+if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
 
-# added by travis gem
-# [ -f /Users/ashok.raja/.travis/travis.sh ] && source /Users/ashok.raja/.travis/travis.sh
-
-# [[ -s "/Users/ashokraja/.gvm/scripts/gvm" ]] && source "/Users/ashokraja/.gvm/scripts/gvm"
+# Travis CI
+[ -f /Users/ashok.raja/.travis/travis.sh ] && source /Users/ashok.raja/.travis/travis.sh
 
 # iTerm Shell Intergration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
@@ -76,5 +78,9 @@ export LDFLAGS="-L/usr/local/opt/openssl/lib -L/usr/local/opt/zlib/lib -L/usr/lo
 export CFLAGS="-I/usr/local/include -L/usr/local/lib"
 export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/sqlite/include"
 
+# A command-line fuzzy finder
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Powerlevel9k Cutomization
 [ -f ${HOME}/.powerlevel9k_custom ] && source ${HOME}/.powerlevel9k_custom
+
