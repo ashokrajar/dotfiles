@@ -18,3 +18,5 @@
 	unpublish = !legit unpublish
 	undo = !legit undo
 	branches = !legit branches
+[merge]
+	ff = false

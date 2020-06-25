@@ -2,3 +2,7 @@ pipenv
 workon
 virtualenvwrapper
 ipython
+pyflakes
+jedi
+neovim
+pynvim

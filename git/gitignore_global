@@ -65,3 +65,4 @@ atlassian-ide-plugin.xml
 .ssh/known_hosts
 .ssh/*.pem
 .env
+.envrc

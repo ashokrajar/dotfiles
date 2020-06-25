@@ -1,0 +1,16 @@
+golang.org/x/tour
+github.com/mum4k/termdash
+github.com/spf13/cobra/cobra
+github.com/spf13/viper
+github.com/astaxie/beego
+github.com/astaxie/beego/bee
+github.com/beego/bee
+github.com/go-delve/delve/cmd/dlv
+github.com/onsi/ginkgo/ginkgo
+github.com/onsi/gomega/...
+github.com/fatih/motion
+github.com/kisielk/errcheck
+github.com/Clever/csvlint/cmd/csvlint
+github.com/go-delve/delve/cmd/dlv
+github.com/mdempsky/gocode
+

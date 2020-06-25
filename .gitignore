@@ -1,7 +1,2 @@
 .DS_Store
-.cvsrc
-.local_workspecalias
-.bash_workspecalias
-.user_env_pass
-.ssh/
-.env
+.envrc

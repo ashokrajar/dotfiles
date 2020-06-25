@@ -1,1 +1,0 @@
-tmux terraform python python3 pypy pypy3 htop hugo tree autoenv git wget hping node awscli legit libffi libxmlsec1 zsh-autosuggestions nmap go glide dep certbot pyenv gmp ta-lib macvim azure-cli kubectl derailed/k9s/k9s libpq pipenv kube-ps1 https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Library/Formula/sshpass.rb fzf kubectx minikube

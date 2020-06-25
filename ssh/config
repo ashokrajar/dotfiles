@@ -6,6 +6,7 @@ StrictHostKeyChecking no
 UserKnownHostsFile /dev/null
 Compression yes
 ForwardAgent yes
+ForwardX11 yes
 UseKeychain yes
 AddKeysToAgent yes
 
@@ -32,14 +33,53 @@ Host bitbucket.org
 Host localhost
     Hostname 127.0.0.1
     User ashokraja
-    IdentityFile ~/.ss/id_rsa
+    IdentityFile ~/.ssh/id_rsa
+
+Host *.ashokraja.in
+    User ashokraja
+    ForwardAgent yes
+    StrictHostKeyChecking yes
+    IdentityFile ~/.ssh/id_rsa
+
+Host k8master
+    ForwardAgent yes
+    Hostname k8master.ashokraja.in
+    IdentityFile ~/.ssh/id_rsa
+    User ashokraja
 
 Host codengine
     ForwardAgent yes
-    StrictHostKeyChecking yes
-    Hostname 192.168.10.10
+    Hostname codengine.ashokraja.in
     IdentityFile ~/.ssh/id_rsa
     User ashokrajar
+
+Host cmdcenter
+    ForwardAgent yes
+    StrictHostKeyChecking yes
+    Hostname cmdcenter.ashokraja.in
+    IdentityFile ~/.ssh/id_rsa
+    User ashokraja
+
+Host devtools
+    ForwardAgent yes
+    StrictHostKeyChecking yes
+    Hostname devtools.ashokraja.in
+    IdentityFile ~/.ssh/id_rsa
+    User ashokraja
+
+Host atom
+    ForwardAgent yes
+    StrictHostKeyChecking yes
+    Hostname atom.ashokraja.in
+    IdentityFile ~/.ssh/id_rsa
+    User pi
+
+Host blackbox
+    ForwardAgent yes
+    StrictHostKeyChecking yes
+    Hostname blackbox.ashokraja.in
+    IdentityFile ~/.ssh/id_rsa
+    User ashokraja
 
 Host remotengine
     ForwardAgent yes
@@ -51,15 +91,9 @@ Host remotengine
 Host remoteproxy
     ForwardAgent yes
     StrictHostKeyChecking yes
-    Hostname 54.185.187.213
+    Hostname us-proxy.ashokraja.in
+    User ubuntu
     IdentityFile ~/.ssh/id_rsa
 
-Host chefmaster
-    ForwardAgent yes
-    StrictHostKeyChecking yes
-    Hostname 192.168.10.20
-    User root
-
-Host git-codecommit.*.amazonaws.com
-    User APKAI3UHJVWN6FCELENA
-    IdentityFile ~/.ssh/id_rsa_work
+# Work
+#

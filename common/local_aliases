@@ -6,6 +6,10 @@
 alias myip='echo -en "Private IPs :\n\t"; ifconfig | grep inet | egrep -v "inet6|127.0.0.1" | cut -f2 -d" "; echo -en "Public IPs :\n\t"; dig +short myip.opendns.com @resolver1.opendns.com'
 alias flushdns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder; say cache flushed'
 
+# Editors
+alias vi='nvim'
+alias vim='nvim'
+
 # tmux
 alias owork='tmux attach -t work'
 
@@ -20,3 +24,9 @@ alias spfupdate='vim +BundleInstall! +BundleClean +q'
 
 # K8
 alias kc='kubectl'
+
+# SSH Socks Tunnel
+alias sshhttpstunnel='ssh -D 8123 -f -C -q -N remoteproxy'
+
+# Remote VNC Tunnel
+alias homevnctunnel='ssh -L 5900:localhost:5900 blackbox'
