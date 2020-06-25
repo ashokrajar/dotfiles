@@ -1,8 +1,8 @@
 init:
-	mkdir ~/bin
+	mkdir -p ~/bin
 	mkdir -p ~/gopaths/global
 	mkdir -p ~/.config/nvim
-	mkdir -p ~/.tmux/plugins
+	mkdir -p ~/.tmux/plugins/tmp
 	mkdir -p ~/.ipython/profile_default
 
 install: init

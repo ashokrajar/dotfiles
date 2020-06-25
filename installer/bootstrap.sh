@@ -4,23 +4,21 @@
 if [[ "${OSTYPE}" == darwin* ]]; then
     brew-install.sh
 elif [[ "${OSTYPE}" == linux* ]]; then
-    apt-install.sh
+    installer/linux-install.sh
 else
     echo -en "\nUnSupported Operating System\n\n"
 fi
 
 # Install zprezto
-if [[ -s "~/.zprezto/.git/config" ]]; then
+if [[ -s "${HOME}/.zprezto/.git/config" ]]; then
     echo -en "zprezto already installed.\n"
 else
     echo -en "Installing zprezto .....\n"
     git clone --recursive https://github.com/sorin-ionescu/prezto.git $HOME/.zprezto
-    cd $ZPREZTODIR
-    git clone --recurse-submodules https://github.com/belak/prezto-contrib contrib
 fi
 
 # Install neovim config
-if [[ -s "~/.config/nvim/init.vim" ]]; then
+if [[ -s "${HOME}/.config/nvim/init.vim" ]]; then
     echo -en "NeoVim already initialized.\n"
 else
     echo -en "Initializing nvim .....\n"
@@ -31,7 +29,7 @@ else
 fi
 
 # Install tmux plugin manager
-if [[ -s "~/.tmux/plugins/tpm/.git/config" ]]; then
+if [[ -s "${HOME}/.tmux/plugins/tpm/.git/config" ]]; then
     echo -en "tmux already initialized\n"
 else
     echo -en "Initializing tmux .....\n"
@@ -39,31 +37,31 @@ else
 fi
 
 # Link all dotfiles
-ln -s ~/.dotfiles/common/tmux.conf ~/.tmux.conf
-ln -s ~/.dotfiles/common/local_aliases ~/.local_aliases
-ln -s ~/.dotfiles/common/screenrc ~/.screenrc
+ln -sf ~/.dotfiles/common/tmux.conf ~/.tmux.conf
+ln -sf ~/.dotfiles/common/local_aliases ~/.local_aliases
+ln -sf ~/.dotfiles/common/screenrc ~/.screenrc
 
-ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
-ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
+ln -sf ~/.dotfiles/git/gitconfig ~/.gitconfig
+ln -sf ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 
-ln -s ~/.dotfiles/nvim/local_init.vim ~/.config/nvim/local_init.vim
-ln -s ~/.dotfiles/nvim/local_bundles.vim ~/.config/nvim/local_bundles.vim
-ln -s ~/.dotfiles/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
+ln -sf ~/.dotfiles/nvim/local_init.vim ~/.config/nvim/local_init.vim
+ln -sf ~/.dotfiles/nvim/local_bundles.vim ~/.config/nvim/local_bundles.vim
+ln -sf ~/.dotfiles/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
 
-ln -s ~/.dotfiles/ipython/ipython_config.py ~/.ipython/profile_default/ipython_config.py
+ln -sf ~/.dotfiles/ipython/ipython_config.py ~/.ipython/profile_default/ipython_config.py
 
-ln -s ~/.dotfiles/ssh/config ~/.ssh/config
+ln -sf ~/.dotfiles/ssh/config ~/.ssh/config
 
-ln -s ~/.dotfiles/bash/bashrc ~/.bashrc
-ln -s ~/.dotfiles/bash/bash_aliases ~/.bash_aliases
-ln -s ~/.dotfiles/bash/bash_profile ~/.bash_profile
+ln -sf ~/.dotfiles/bash/bashrc ~/.bashrc
+ln -sf ~/.dotfiles/bash/bash_aliases ~/.bash_aliases
+ln -sf ~/.dotfiles/bash/bash_profile ~/.bash_profile
 
-ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
-ln -s ~/.dotfiles/zsh/zpreztorc ~/.zpreztorc
-ln -s ~/.dotfiles/zsh/zprofile ~/.zprofile
-ln -s ~/.dotfiles/zsh/zsh_history ~/.zsh_history
-ln -s ~/.dotfiles/zsh/themes/prompt_powerline_setup ~/.zprezto/modules/prompt/external/powerline/prompt_powerline_setup
-ln -s ~/.dotfiles/zsh/themes/prompt_myzssh_setup ~/.zprezto/modules/prompt/prompt_myzssh_setup
-ln -s ~/.dotfiles/zsh/themes/prompt_superlinh_setup ~/.zprezto/modules/prompt/functions/prompt_superlinh_setup
+ln -sf ~/.dotfiles/zsh/zshrc ~/.zshrc
+ln -sf ~/.dotfiles/zsh/zpreztorc ~/.zpreztorc
+ln -sf ~/.dotfiles/zsh/zprofile ~/.zprofile
+ln -sf ~/.dotfiles/zsh/zsh_history ~/.zsh_history
+ln -sf ~/.dotfiles/zsh/themes/prompt_powerline_setup ~/.zprezto/modules/prompt/external/powerline/prompt_powerline_setup
+ln -sf ~/.dotfiles/zsh/themes/prompt_myzssh_setup ~/.zprezto/modules/prompt/prompt_myzssh_setup
+ln -sf ~/.dotfiles/zsh/themes/prompt_superlinh_setup ~/.zprezto/modules/prompt/functions/prompt_superlinh_setup
 
 
