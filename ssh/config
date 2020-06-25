@@ -1,3 +1,6 @@
+# Include local configs
+Include localconfig
+
 #Config
 TCPKeepAlive yes
 ServerAliveInterval 20
@@ -16,7 +19,6 @@ SendEnv AWS_ACCESS_KEY_ID
 SendEnv AWS_SECRET_ACCESS_KEY
 
 IdentityFile ~/.ssh/id_rsa_work
-
 
 Host github.com
     Hostname github.com
@@ -95,5 +97,3 @@ Host remoteproxy
     User ubuntu
     IdentityFile ~/.ssh/id_rsa
 
-# Work
-#

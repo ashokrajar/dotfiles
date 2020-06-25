@@ -1,4 +1,12 @@
 #!/usr/bin/env bash
+
+# install brew
+if [[ -s "/usr/local/bin/brew" ]]; then
+    echo -en "brew already installed.\n"
+else
+    bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"    
+fi
+
 # Core
 brew install gcc libffi libxmlsec1 gmp ta-lib libpq cmake
 

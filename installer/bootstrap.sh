@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+# Check shell
+SHELLNAME=`echo ${SHELL} | awk -F'/' '{print $NF}'`
+if [[ ! "${SHELLNAME}" == zsh ]]; then
+    echo -en "\nUnSupported Shell : ${SHELLNAME}\n\n"
+    exit 1
+fi
+
 # Install core packages/libraries
 if [[ "${OSTYPE}" == darwin* ]]; then
     brew-install.sh
@@ -7,7 +14,11 @@ elif [[ "${OSTYPE}" == linux* ]]; then
     installer/linux-install.sh
 else
     echo -en "\nUnSupported Operating System\n\n"
+    exit 1
 fi
+
+# alias nvim as vim
+alais vim="nvim"
 
 # Install zprezto
 if [[ -s "${HOME}/.zprezto/.git/config" ]]; then
@@ -37,25 +48,27 @@ else
 fi
 
 # Link all dotfiles
+# tmux
 ln -sf ~/.dotfiles/common/tmux.conf ~/.tmux.conf
 ln -sf ~/.dotfiles/common/local_aliases ~/.local_aliases
 ln -sf ~/.dotfiles/common/screenrc ~/.screenrc
 
+# git
 ln -sf ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -sf ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 
+# nvim
 ln -sf ~/.dotfiles/nvim/local_init.vim ~/.config/nvim/local_init.vim
 ln -sf ~/.dotfiles/nvim/local_bundles.vim ~/.config/nvim/local_bundles.vim
 ln -sf ~/.dotfiles/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
 
+# ipython
 ln -sf ~/.dotfiles/ipython/ipython_config.py ~/.ipython/profile_default/ipython_config.py
 
+# ssh
 ln -sf ~/.dotfiles/ssh/config ~/.ssh/config
 
-ln -sf ~/.dotfiles/bash/bashrc ~/.bashrc
-ln -sf ~/.dotfiles/bash/bash_aliases ~/.bash_aliases
-ln -sf ~/.dotfiles/bash/bash_profile ~/.bash_profile
-
+# zsh
 ln -sf ~/.dotfiles/zsh/zshrc ~/.zshrc
 ln -sf ~/.dotfiles/zsh/zpreztorc ~/.zpreztorc
 ln -sf ~/.dotfiles/zsh/zprofile ~/.zprofile

@@ -25,13 +25,15 @@ export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/gopath
 export GOOS="darwin"
 
-[[ -s "/Users/ashokraja/.gvm/scripts/gvm" ]] && source "/Users/ashokraja/.gvm/scripts/gvm"
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
 
 # jEnv
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-export JAVA_HOME="$(jenv javahome)"
+if [[ -s "$HOME/.jenv/version" ]]; then
+    export PATH="$HOME/.jenv/bin:$PATH"
+    eval "$(jenv init -)"
+    export JAVA_HOME="$(jenv javahome)"    
+fi
 
 # rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
@@ -49,17 +51,10 @@ export NVM_DIR="$HOME/.nvm"
 # AWS shell completer
 [[ -f "/usr/local/bin/aws_zsh_completer.sh" ]] && source "/usr/local/bin/aws_zsh_completer.sh"
 
-# GCP Auto complete
-[[ -f "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc" ]] && source "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc"
-
-# python autoenv
-#[[ -f "/usr/local/opt/autoenv/activate.sh" ]] && source "/usr/local/opt/autoenv/activate.sh"
-
 # pyenv
-eval "$(pyenv init -)"
-
-# Docker
-# eval "$(docker-machine env codengine)"
+if [[ -s "$HOME/.pyenv/version" ]]; then
+    eval "$(pyenv init -)"
+fi
 
 # K8
 if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
