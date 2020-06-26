@@ -1,0 +1,25 @@
+# golang
+export GOROOT=/usr/local/opt/go/libexec
+export GOOS="darwin"
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+
+# ZSH Auto complete
+[[ -f "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && source "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
+# Helm Auto complete
+[[ -f "/usr/local/share/zsh/site-functions/_helm" ]] && source "/usr/local/share/zsh/site-functions/_helm"
+
+# AWS shell completer
+[[ -f "/usr/local/bin/aws_zsh_completer.sh" ]] && source "/usr/local/bin/aws_zsh_completer.sh"
+
+# iTerm Shell Intergration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# Set openssl lib path
+export LDFLAGS="-L/usr/local/opt/openssl/lib -L/usr/local/opt/zlib/lib -L/usr/local/opt/sqlite/lib"
+export CFLAGS="-I/usr/local/include -L/usr/local/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/sqlite/include"
+

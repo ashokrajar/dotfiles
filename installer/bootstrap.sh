@@ -9,7 +9,7 @@ fi
 
 # Install core packages/libraries
 if [[ "${OSTYPE}" == darwin* ]]; then
-    brew-install.sh
+    installer/brew-install.sh
 elif [[ "${OSTYPE}" == linux* ]]; then
     installer/linux-install.sh
 else
@@ -17,8 +17,14 @@ else
     exit 1
 fi
 
+# Install core python packages
+pip install -r installer/pip-requirements.txt
+
 # alias nvim as vim
-alais vim="nvim"
+alias vim="nvim"
+
+# set GOPATH
+export GOPATH=${HOME}/gopaths/global
 
 # Install zprezto
 if [[ -s "${HOME}/.zprezto/.git/config" ]]; then
@@ -36,7 +42,7 @@ else
     curl 'https://vim-bootstrap.com/generate.vim' --data 'editor=nvim&langs=html&langs=go&langs=python&langs=c&langs=rust&langs=html&langs=javascript' > ~/.config/nvim/init.vim
     echo -en "Installing nvim plugins .....\n"
     vim +PlugInstall +UpdateRemotePlugins +qall
-    vim -c 'CocInstall -sync coc-json coc-html coc-python coc-go coc-xml coc-yaml coc-sql|q'
+    vim -c 'CocInstall -sync coc-json coc-html coc-python coc-xml coc-yaml coc-sql|q'
 fi
 
 # Install tmux plugin manager
@@ -77,4 +83,8 @@ ln -sf ~/.dotfiles/zsh/themes/prompt_powerline_setup ~/.zprezto/modules/prompt/e
 ln -sf ~/.dotfiles/zsh/themes/prompt_myzssh_setup ~/.zprezto/modules/prompt/prompt_myzssh_setup
 ln -sf ~/.dotfiles/zsh/themes/prompt_superlinh_setup ~/.zprezto/modules/prompt/functions/prompt_superlinh_setup
 
-
+if [[ "${OSTYPE}" == darwin* ]]; then
+    ln -sf ~/.dotfiles/zsh/maczshrc ~/.maczshrc
+elif [[ "${OSTYPE}" == linux* ]]; then
+    ln -sf ~/.dotfiles/zsh/linuxzshrc ~/.linuxzshrc
+fi

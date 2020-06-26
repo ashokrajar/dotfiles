@@ -44,8 +44,7 @@ typeset -gU cdpath fpath mailpath path
 # Set the list of directories that Zsh searches for programs.
 path=(
   ~/bin
-  ~/Downloads/google-cloud-sdk/bin
-  ~/workspace/code/gopath/bin
+  ~/gopaths/global/bin
   ~/.pyenv/bin
   /usr/local/opt/go/libexec/bin
   /usr/local/{bin,sbin}
