@@ -77,6 +77,7 @@ ln -sf ~/.dotfiles/zsh/zshrc ~/.zshrc
 ln -sf ~/.dotfiles/zsh/zpreztorc ~/.zpreztorc
 ln -sf ~/.dotfiles/zsh/zprofile ~/.zprofile
 ln -sf ~/.dotfiles/zsh/zsh_history ~/.zsh_history
+ln -sf ~/.dotfiles/zsh/powerlevel9k_custom ~/.powerlevel9k_custom
 ln -sf ~/.dotfiles/zsh/themes/prompt_powerline_setup ~/.zprezto/modules/prompt/external/powerline/prompt_powerline_setup
 ln -sf ~/.dotfiles/zsh/themes/prompt_myzssh_setup ~/.zprezto/modules/prompt/prompt_myzssh_setup
 ln -sf ~/.dotfiles/zsh/themes/prompt_superlinh_setup ~/.zprezto/modules/prompt/functions/prompt_superlinh_setup
