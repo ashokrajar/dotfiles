@@ -10,7 +10,6 @@ UserKnownHostsFile /dev/null
 Compression yes
 ForwardAgent yes
 ForwardX11 yes
-UseKeychain yes
 AddKeysToAgent yes
 
 SendEnv USERID
