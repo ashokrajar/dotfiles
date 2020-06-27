@@ -1,7 +1,6 @@
 #!/bin/bash
 
-which yum && PKG_CMD="yum"
-which yum && PKG_CMD="yum"
+which apt && PKG_CMD="apt"
 which yum && PKG_CMD="yum"
 
 case $PKG_CMD in

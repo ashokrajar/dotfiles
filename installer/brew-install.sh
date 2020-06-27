@@ -13,8 +13,6 @@ brew install gcc libffi libxmlsec1 gmp ta-lib libpq cmake
 
 # Editors
 brew install neovim
-brew tap d12frosted/emacs-plus
-brew install emacs-plus
 
 # Git
 brew tap git-chglog/git-chglog
