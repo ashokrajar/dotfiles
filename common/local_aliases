@@ -10,6 +10,10 @@ alias flushdns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder; sa
 alias vi='nvim'
 alias vim='nvim'
 
+# Python
+alias python='python'
+alias pip='pip3'
+
 # tmux
 alias owork='tmux attach -t work'
 

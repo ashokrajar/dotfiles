@@ -1,24 +1,22 @@
 #!/usr/bin/env bash
 
-# Check shell
-SHELLNAME=`echo ${SHELL} | awk -F'/' '{print $NF}'`
-if [[ ! "${SHELLNAME}" == zsh ]]; then
-    echo -en "\nUnSupported Shell : ${SHELLNAME}\n\n"
-    exit 1
-fi
-
 # Install core packages/libraries
 if [[ "${OSTYPE}" == darwin* ]]; then
     installer/brew-install.sh
+
+    # Install core python packages
+    pip install -r installer/pip-requirements.txt
+
 elif [[ "${OSTYPE}" == linux* ]]; then
     installer/linux-install.sh
+
+    # Install core python packages
+    pip3 install -r installer/pip-requirements.txt
+
 else
     echo -en "\nUnSupported Operating System\n\n"
     exit 1
 fi
-
-# Install core python packages
-pip install -r installer/pip-requirements.txt
 
 # alias nvim as vim
 alias vim="nvim"

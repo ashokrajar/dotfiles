@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Core
-sudo apt-get install -y build-essential inetutils-traceroute traceroute hwinfo 
+sudo apt-get install -y build-essential inetutils-traceroute traceroute hwinfo
 
 # Editors
 sudo apt-get install -y neovim
@@ -16,4 +16,5 @@ sudo apt-get install -y python-is-python3 python3-pip
 sudo apt-get install -y direnv legit
 
 # Terminal Tools
-sudo apt-get install -y tmux htop wget 
+sudo apt-get install -y tmux htop wget curl
+
