@@ -64,3 +64,6 @@ if [[ "${OSTYPE}" == darwin* ]]; then
 elif [[ "${OSTYPE}" == linux* ]]; then
     [[ -f "$HOME/.linuxzshrc" ]] && source "$HOME/.linuxzshrc"
 fi
+
+# Goenv
+eval "$(goenv init -)"
