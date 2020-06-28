@@ -17,7 +17,7 @@ case $PKG_CMD in
 esac
 
 # Install neovim
-if [[ -s "${HOMe}/bin/vim" ]]; then
+if [[ -s "${HOME}/bin/vim" ]]; then
     echo -en "NeoVim is already installed."
 else
     echo -en "Installing NeoVim ....."
@@ -27,7 +27,7 @@ else
 fi
 
 # Install goalng & goenv
-if [[ -s "${HOMe}/.goenv/.git/config" ]]; then
+if [[ -s "${HOME}/.goenv/.git/config" ]]; then
     echo -en "genv is already installed."
 else
     echo -en "Installing genv ....."
@@ -39,7 +39,7 @@ else
 fi
 
 # Install tmux
-if [[ -s "${HOMe}/bin/tmux" ]]; then
+if [[ -s "${HOME}/bin/tmux" ]]; then
     echo -en "tmux is already installed."
 else
     echo -en "Installing tmux ....."
