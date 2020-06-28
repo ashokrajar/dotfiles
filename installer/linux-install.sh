@@ -26,7 +26,7 @@ else
     mv nvim.appimage $HOME/bin/vim
 fi
 
-# Install goenv
+# Install goalng & goenv
 if [[ -s "${HOMe}/.goenv/.git/config" ]]; then
     echo -en "genv is already installed."
 else
@@ -35,6 +35,7 @@ else
     export GOENV_ROOT="$HOME/.goenv"
     export PATH="$GOENV_ROOT/bin:$PATH"
     goenv install 1.14.4
+    goenv global 1.14.4
 fi
 
 # Install tmux

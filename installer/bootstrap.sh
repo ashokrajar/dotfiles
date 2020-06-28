@@ -21,8 +21,10 @@ fi
 # alias nvim as vim
 alias vim="nvim"
 
+# Install core golang package
 # set GOPATH
 export GOPATH=${HOME}/gopaths/global
+for PKG in `cat installer/gopkgs.txt`; do go get -u $PKG; done
 
 # Install zprezto
 if [[ -s "${HOME}/.zprezto/.git/config" ]]; then
