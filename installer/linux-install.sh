@@ -27,9 +27,10 @@ else
 fi
 
 # Install goenv
-if [[ -s "${HOMe}/bin/vim" ]]; then
-    echo -en "NeoVim is already installed."
+if [[ -s "${HOMe}/.goenv/.git/config" ]]; then
+    echo -en "genv is already installed."
 else
+    echo -en "Installing genv ....."
     git clone https://github.com/syndbg/goenv.git ~/.goenv
     export GOENV_ROOT="$HOME/.goenv"
     export PATH="$GOENV_ROOT/bin:$PATH"
@@ -37,9 +38,10 @@ else
 fi
 
 # Install tmux
-if [[ -s "${HOMe}/bin/vim" ]]; then
-    echo -en "NeoVim is already installed."
+if [[ -s "${HOMe}/bin/tmux" ]]; then
+    echo -en "tmux is already installed."
 else
+    echo -en "Installing tmux ....."
     curl -LO https://github.com/tmux/tmux/releases/download/3.1b/tmux-3.1b-x86_64.AppImage
     chmod u+x tmux-3.1b-x86_64.AppImage
     mv tmux-3.1b-x86_64.AppImage $HOME/bin/tmux
