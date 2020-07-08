@@ -12,7 +12,7 @@ else
 fi
 
 # Core
-sudo pacman -S --noconfirm --needed base-devel net-tools which zsh sudo
+sudo pacman -S --noconfirm --needed base-devel net-tools which zsh sudo inetutils
 
 # Editors
 sudo pacman -S --noconfirm --needed neovim
