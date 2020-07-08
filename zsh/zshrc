@@ -67,3 +67,5 @@ fi
 
 # Goenv
 eval "$(goenv init -)"
+
+POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
