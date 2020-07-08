@@ -58,6 +58,7 @@ else
 fi
 
 # Link all dotfiles
+echo -en "Linking dotfiles .....\n"
 # tmux
 ln -sf ~/.dotfiles/common/tmux.conf ~/.tmux.conf
 ln -sf ~/.dotfiles/common/local_aliases ~/.local_aliases
