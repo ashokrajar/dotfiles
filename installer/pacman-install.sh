@@ -37,7 +37,7 @@ yay -S --removemake --answerclean A --answerdiff N --noconfirm --needed azure-cl
 sudo pacman -S --noconfirm --needed kubectl kubectx k9s
 
 # Terminal Tools
-sudo pacman -S --noconfirm --needed htop wget curl fzf tree nmap httpie bat sshpass the_silver_searcher
+sudo pacman -S --noconfirm --needed htop wget curl fzf tmux tree nmap httpie bat sshpass the_silver_searcher
 yay -S --removemake --answerclean A --answerdiff N --noconfirm --needed kube-ps1
 
 # Automation Tools

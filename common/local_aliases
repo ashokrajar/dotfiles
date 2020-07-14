@@ -23,6 +23,7 @@ alias ide='tmux attach -t ide'
 
 # debugging
 alias psstate='ps -axo pid,comm,stat --sort=-stat'
+alias pst='ps auwfx'
 
 # Docker
 alias drm_notrunning="docker ps -a | grep Exited | awk '{print $1}' | xargs docker rm"

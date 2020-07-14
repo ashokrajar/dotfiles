@@ -756,3 +756,5 @@ else
   let g:airline_symbols.readonly = ''
   let g:airline_symbols.linenr = ''
 endif
+
+let g:vim_markdown_folding_disabled = 1

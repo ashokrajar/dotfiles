@@ -26,7 +26,7 @@ alias vim="nvim"
 export GOPATH=${HOME}/gopaths/global
 for PKG in `cat installer/gopkgs.txt`;
 do
-    echo -en "Go package installing : ${PKG}\n"
+    echo -en "Installing/UPgrading Go package : ${PKG} .....\n"
     go get -u $PKG
 done
 

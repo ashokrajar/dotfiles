@@ -52,7 +52,7 @@ Host codengine
     ForwardAgent yes
     Hostname codengine.ashokraja.in
     IdentityFile ~/.ssh/id_rsa
-    User ashokrajar
+    User ashokraja
 
 Host cmdcenter
     ForwardAgent yes

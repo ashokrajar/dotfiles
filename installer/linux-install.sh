@@ -8,10 +8,12 @@ case $PKG_CMD in
     apt)
         installer/apt-install.sh
         installer/nvim-install.sh
+        installer/tmux-install.sh
         ;;
     yum)
         installer/yum-install.sh
         installer/nvim-install.sh
+        installer/tmux-install.sh
         ;;
     packman)
         installer/pacman-install.sh
@@ -22,7 +24,7 @@ case $PKG_CMD in
         ;;
 esac
 
-# Install goalng & goenv
+# Install golang & goenv
 if [[ -s "${HOME}/.goenv/.git/config" ]]; then
     echo -en "genv is already installed.\n"
 else
@@ -32,16 +34,6 @@ else
     export PATH="$GOENV_ROOT/bin:$PATH"
     goenv install 1.14.4
     goenv global 1.14.4
-fi
-
-# Install tmux
-if [[ -s "${HOME}/bin/tmux" ]]; then
-    echo -en "tmux is already installed.\n"
-else
-    echo -en "Installing tmux .....\n"
-    curl -LO https://github.com/tmux/tmux/releases/download/3.1b/tmux-3.1b-x86_64.AppImage
-    chmod u+x tmux-3.1b-x86_64.AppImage
-    mv tmux-3.1b-x86_64.AppImage $HOME/bin/tmux
 fi
 
 # zsh auto suggestion
