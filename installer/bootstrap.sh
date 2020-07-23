@@ -27,7 +27,7 @@ export GOPATH=${HOME}/gopaths/global
 for PKG in `cat installer/gopkgs.txt`;
 do
     echo -en "Installing/UPgrading Go package : ${PKG} .....\n"
-    go get -u $PKG
+    go get $PKG
 done
 
 # Install zprezto
