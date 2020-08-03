@@ -7,7 +7,7 @@ ServerAliveInterval 20
 ServerAliveCountMax 5
 StrictHostKeyChecking no
 UserKnownHostsFile /dev/null
-Compression yes
+Compression no
 ForwardAgent yes
 ForwardX11 yes
 AddKeysToAgent yes
