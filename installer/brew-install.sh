@@ -16,12 +16,12 @@ brew install neovim
 
 # Git
 brew tap git-chglog/git-chglog
-brew install git legit git-chglog git-secrets git-flow 
+brew install git legit git-chglog git-secrets git-flow gitui
 
 #git-tag
 
 # Languages
-brew install python3 pypy3 pyenv pipenv go goenv node nvm
+brew install python3 pypy3 pyenv pipenv go goenv node nvm rustup
 
 # Developer tools
 brew install direnv libfaketime maven autoenv glide cobra legit jq

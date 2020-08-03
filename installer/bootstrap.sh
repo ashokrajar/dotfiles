@@ -55,6 +55,7 @@ if [[ -s "${HOME}/.tmux/plugins/tpm/.git/config" ]]; then
 else
     echo -en "Initializing tmux .....\n"
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    ~/.tmux/plugins/tpm/bin/install_plugins
 fi
 
 # Link all dotfiles

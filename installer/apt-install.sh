@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Core
-sudo apt-get install -y build-essential inetutils-traceroute traceroute hwinfo
+sudo apt-get install -y build-essential inetutils-traceroute traceroute hwinfo xdg-utils
 
 # Editors
 # sudo apt-get install -y neovim
@@ -10,7 +10,10 @@ sudo apt-get install -y build-essential inetutils-traceroute traceroute hwinfo
 sudo apt-get install -y git
 
 # Languages
-sudo apt-get install -y python-is-python3 python3-pip
+sudo apt-get install -y python-is-python3 python3-pip rustc
+
+# Debug tools
+sudo apt-get install -y strace
 
 # Developer tools
 sudo apt-get install -y direnv legit

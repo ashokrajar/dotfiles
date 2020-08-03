@@ -9,6 +9,7 @@ case $PKG_CMD in
         installer/apt-install.sh
         installer/nvim-install.sh
         installer/tmux-install.sh
+        installer/gitui-install.sh
         ;;
     yum)
         installer/yum-install.sh

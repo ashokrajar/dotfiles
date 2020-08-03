@@ -9,9 +9,10 @@ dot files and configs.
 # Tested on
 * macOS 10.15.X
 * Ubuntu 18.04
+* Archlinux
  
 # Usage/Installion
-
+ 
 Ensure your shell is a zsh & you have make installed
 
 ```bash
@@ -22,7 +23,7 @@ make install
 ```
  
 # UnInstall
-
+ 
 ```bash
 make clean
 ```

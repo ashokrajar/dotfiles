@@ -12,18 +12,21 @@ else
 fi
 
 # Core
-sudo pacman -S --noconfirm --needed base-devel net-tools which zsh sudo inetutils
+sudo pacman -S --noconfirm --needed base-devel net-tools which zsh sudo inetutils xdg-utils
 
 # Editors
 sudo pacman -S --noconfirm --needed neovim
 
 # Git
 sudo pacman -S --noconfirm --needed git
-yay -S --removemake --answerclean A --answerdiff N --noconfirm --needed legit git-chglog git-secrets
+yay -S --removemake --answerclean A --answerdiff N --noconfirm --needed legit git-chglog git-secrets gitui
 # git-flow
 
 # Languages
-sudo pacman -S --noconfirm --needed python pypy python-pip pyenv go nodejs
+sudo pacman -S --noconfirm --needed python pypy python-pip pyenv go nodejs rust
+
+# Debug Tools
+sudo packam -S --noconfirm --needed strace
 
 # Developer tools
 sudo pacman -S --noconfirm --needed jq
