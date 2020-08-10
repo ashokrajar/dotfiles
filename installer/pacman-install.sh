@@ -46,6 +46,8 @@ yay -S --removemake --answerclean A --answerdiff N --noconfirm --needed kube-ps1
 # Automation Tools
 sudo pacman -S --noconfirm --needed terraform ansible
 
-# Load Testing Tool
-sudo pacman -S --noconfirm --needed vegeta
+# Load/Performance Testing Tool
+sudo pacman -S --noconfirm --needed vegeta iperf3
 
+# Monitoring Tools
+sudo pacman -S --noconfirm --needed iotop iftop htop sysstat

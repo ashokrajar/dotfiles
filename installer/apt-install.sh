@@ -25,3 +25,9 @@ sudo apt-get install -y htop wget curl httpie
 # Install node.js
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
+
+# Load/Performance Testing Tool
+sudo apt-get install -y iperf3
+
+# Monitoring Tools
+sudo apt-get install -y iotop iftop htop sysstat
