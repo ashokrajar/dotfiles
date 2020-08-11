@@ -68,4 +68,7 @@ fi
 # Goenv
 eval "$(goenv init -)"
 
+# DirEnv
+eval "$(direnv hook zsh)"
+
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
