@@ -28,7 +28,7 @@ export LANG=en_US.UTF-8
 
 # golang
 # Goenv
-GOENV_DISABLE_GOPATH=1
+export GOENV_DISABLE_GOPATH=1
 eval "$(goenv init -)"
 export GOPATH=$HOME/gopaths/global
 
