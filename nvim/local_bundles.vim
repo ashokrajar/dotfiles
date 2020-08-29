@@ -37,3 +37,8 @@ Plug 'plasticboy/vim-markdown'
 " multi cursor select
 Plug 'terryma/vim-multiple-cursors'
 
+" fancy start screen
+Plug 'mhinz/vim-startify'
+
+" See what keys do like in emacs
+Plug 'liuchengxu/vim-which-key'

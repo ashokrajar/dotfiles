@@ -9,7 +9,7 @@ else
 fi
 
 # Core
-brew install gcc libffi libxmlsec1 gmp ta-lib libpq cmake
+brew install gcc libffi libxmlsec1 gmp ta-lib libpq cmake zsh zsh-autosuggestions
 
 # Editors
 brew install neovim
@@ -24,7 +24,7 @@ brew install git legit git-chglog git-secrets git-flow gitui
 brew install python3 pypy3 pyenv pipenv go goenv node nvm rustup
 
 # Developer tools
-brew install direnv libfaketime maven autoenv glide cobra legit jq
+brew install direnv libfaketime maven autoenv glide legit jq
 brew tap git-chglog/git-chglog
 brew install git-chglog
 brew install golangci/tap/golangci-lint
@@ -46,8 +46,8 @@ brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Librar
 # Automation Tools
 brew install terraform
 
-# Load Testing Tool
-brew install vegeta
+# Load/Performance Testing Tool
+brew install vegeta iperf3
 
 # Terminal Plotting Tools
 brew install rs/tap/jaggr

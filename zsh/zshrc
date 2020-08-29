@@ -49,6 +49,9 @@ if [[ -s "$HOME/.pyenv/version" ]]; then
     eval "$(pyenv init -)"
 fi
 
+# direnv
+if [ $commands[direnv] ]; then eval "$(direnv hook zsh)"; fi
+
 # K8
 if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
 
