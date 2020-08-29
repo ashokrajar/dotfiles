@@ -1,5 +1,6 @@
 " set leader key
 let mapleader = "\<Space>"
+nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 
 "*****************************************************************************
 "" themes
