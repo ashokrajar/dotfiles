@@ -16,10 +16,10 @@ sudo apt-get install -y python-is-python3 python3-pip rustc
 sudo apt-get install -y strace
 
 # Developer tools
-sudo apt-get install -y direnv legit
+sudo apt-get install -y direnv legit yamllint
 
 # Terminal Tools
-sudo apt-get install -y htop wget curl httpie
+sudo apt-get install -y htop wget curl httpie sshpass
 # sudo apt-get install -y tmux
 
 # Install node.js

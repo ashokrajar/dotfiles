@@ -24,7 +24,7 @@ brew install git legit git-chglog git-secrets git-flow gitui
 brew install python3 pypy3 pyenv pipenv go goenv node nvm rustup
 
 # Developer tools
-brew install direnv libfaketime maven autoenv glide legit jq
+brew install direnv libfaketime maven autoenv glide legit jq yamllint
 brew tap git-chglog/git-chglog
 brew install git-chglog
 brew install golangci/tap/golangci-lint
