@@ -29,7 +29,7 @@ export LANG=en_US.UTF-8
 # golang
 # Goenv
 export GOENV_DISABLE_GOPATH=1
-eval "$(goenv init -)"
+if [ $commands[goenv] ]; then eval "$(goenv init -)"; fi
 export GOPATH=$HOME/gopaths/global
 
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
@@ -70,8 +70,5 @@ if [[ "${OSTYPE}" == darwin* ]]; then
 elif [[ "${OSTYPE}" == linux* ]]; then
     [[ -f "$HOME/.linuxzshrc" ]] && source "$HOME/.linuxzshrc"
 fi
-
-# DirEnv
-eval "$(direnv hook zsh)"
 
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true

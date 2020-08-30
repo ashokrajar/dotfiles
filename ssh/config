@@ -11,88 +11,32 @@ Compression no
 ForwardAgent yes
 ForwardX11 yes
 AddKeysToAgent yes
+StrictHostKeyChecking yes
 
 SendEnv USERID
 SendEnv USERPASSWORD
 SendEnv AWS_ACCESS_KEY_ID
 SendEnv AWS_SECRET_ACCESS_KEY
 
-IdentityFile ~/.ssh/id_rsa_work
+IdentityFile ~/.ssh/id_rsa
+IdentityFile ~/.ssh/id_rsa_seconday
 
 Host github.com
-    Hostname github.com
-    StrictHostKeyChecking yes
-    IdentityFile ~/.ssh/id_rsa
     User ashokrajar
 
 Host bitbucket.org
-    Hostname bitbucket.org
-    StrictHostKeyChecking yes
-    IdentityFile ~/.ssh/id_rsa
     User ashokrajar
-
-Host localhost
-    Hostname 127.0.0.1
-    User ashokraja
-    IdentityFile ~/.ssh/id_rsa
 
 Host *.ashokraja.in
     User ashokraja
-    ForwardAgent yes
-    StrictHostKeyChecking yes
-    IdentityFile ~/.ssh/id_rsa
 
-Host k8master
-    ForwardAgent yes
-    Hostname k8master.ashokraja.in
-    IdentityFile ~/.ssh/id_rsa
-    User ashokraja
-
-Host codengine
-    ForwardAgent yes
-    Hostname codengine.ashokraja.in
-    IdentityFile ~/.ssh/id_rsa
-    User ashokraja
-
-Host cmdcenter
-    ForwardAgent yes
-    StrictHostKeyChecking yes
-    Hostname cmdcenter.ashokraja.in
-    IdentityFile ~/.ssh/id_rsa
-    User ashokraja
-
-Host devtools
-    ForwardAgent yes
-    StrictHostKeyChecking yes
-    Hostname devtools.ashokraja.in
-    IdentityFile ~/.ssh/id_rsa
-    User ashokraja
-
-Host atom
-    ForwardAgent yes
-    StrictHostKeyChecking yes
-    Hostname atom.ashokraja.in
-    IdentityFile ~/.ssh/id_rsa
+Host atom.ashokraja.in
     User pi
 
-Host blackbox
-    ForwardAgent yes
-    StrictHostKeyChecking yes
-    Hostname blackbox.ashokraja.in
-    IdentityFile ~/.ssh/id_rsa
-    User ashokraja
-
 Host remotengine
-    ForwardAgent yes
-    StrictHostKeyChecking yes
     Hostname remotengine.ashokraja.in
-    IdentityFile ~/.ssh/id_rsa
     User ubuntu
 
-Host remoteproxy
-    ForwardAgent yes
-    StrictHostKeyChecking yes
+Host remoteproxy\
     Hostname us-proxy.ashokraja.in
     User ubuntu
-    IdentityFile ~/.ssh/id_rsa
-
