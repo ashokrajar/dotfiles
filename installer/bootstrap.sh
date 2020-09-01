@@ -30,6 +30,14 @@ do
     go get $PKG
 done
 
+# Install go apps
+echo -en "Installing essential go tools & applicaitons\n"
+for PKG in `cat installer/gopkgs.txt`;
+do
+    echo -en "${PKG}\n"
+    go get -u ${PKG}
+done
+
 # Install zprezto
 if [[ -s "${HOME}/.zprezto/.git/config" ]]; then
     echo -en "zprezto already installed.\n"
