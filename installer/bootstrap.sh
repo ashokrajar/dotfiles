@@ -4,6 +4,13 @@
 if [[ "${OSTYPE}" == darwin* ]]; then
     installer/brew-install.sh
 
+    # link python
+    ln -sf /usr/local/bin/python3 /usr/local/bin/python
+    ln -sf /usr/local/bin/pip3 /usr/local/bin/pip
+
+    # Enable fzf
+    /usr/local/opt/fzf/install --all
+
     # Install core python packages
     pip install -r installer/pip-requirements.txt
 
@@ -55,6 +62,15 @@ else
     echo -en "Installing nvim plugins .....\n"
     vim +PlugInstall +UpdateRemotePlugins +qall
     vim -c 'CocInstall -sync coc-json coc-html coc-python coc-xml coc-yaml coc-sql|q'
+fi
+
+# Install doom emacs
+if [[ -s "${HOME}/.emacs.d/.git/config" ]]; then
+    echo -en "Doom Emacs already installed.\n"
+else
+    echo -en "Installing Doom Emacs .....\n"
+    git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
+    ~/.emacs.d/bin/doom install
 fi
 
 # Install tmux plugin manager

@@ -29,7 +29,7 @@ sudo pacman -S --noconfirm --needed python pypy python-pip pyenv go nodejs rust
 sudo packam -S --noconfirm --needed strace
 
 # Developer tools
-sudo pacman -S --noconfirm --needed jq
+sudo pacman -S --noconfirm --needed jq hugo
 yay -S --removemake --answerclean A --answerdiff N --noconfirm --needed direnv nvm golangci-lint-bin
 
 # Cloud CLIs
@@ -40,13 +40,13 @@ yay -S --removemake --answerclean A --answerdiff N --noconfirm --needed azure-cl
 sudo pacman -S --noconfirm --needed kubectl kubectx k9s
 
 # Terminal Tools
-sudo pacman -S --noconfirm --needed htop wget curl fzf tmux tree nmap httpie bat sshpass the_silver_searcher
+sudo pacman -S --noconfirm --needed htop wget curl fzf tmux tree nmap httpie bat sshpass the_silver_searcher bat
 yay -S --removemake --answerclean A --answerdiff N --noconfirm --needed kube-ps1
 
 # Automation Tools
 sudo pacman -S --noconfirm --needed terraform ansible
 
-# Load/Performance Testing Tool
+# Load/Performance Testing Too
 sudo pacman -S --noconfirm --needed vegeta iperf3
 
 # Monitoring Tools

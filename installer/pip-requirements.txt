@@ -6,3 +6,9 @@ pyflakes
 jedi
 neovim
 pynvim
+wakatime
+glances
+black
+isort
+nose
+pytest

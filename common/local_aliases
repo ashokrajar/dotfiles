@@ -9,6 +9,8 @@ alias flushdns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder; sa
 # Editors
 alias vi='nvim'
 alias vim='nvim'
+alias em='emacs -nw --no-splash'
+alias emacs='emacs -nw --no-splash'
 
 # git
 alias gitgraph='git log --graph --oneline --decorate --all --source'
@@ -28,9 +30,6 @@ alias pst='ps auwfx'
 # Docker
 alias drm_notrunning="docker ps -a | grep Exited | awk '{print $1}' | xargs docker rm"
 
-# SPF Vim
-alias spfupdate='vim +BundleInstall! +BundleClean +q'
-
 # K8
 alias kc='kubectl'
 
@@ -38,4 +37,4 @@ alias kc='kubectl'
 alias sshhttpstunnel='ssh -D 8123 -f -C -q -N remoteproxy'
 
 # Remote VNC Tunnel
-alias homevnctunnel='ssh -L 5900:localhost:5900 blackbox'
+alias homevnctunnel='ssh -L 5900:localhost:5900 cmdcenter'

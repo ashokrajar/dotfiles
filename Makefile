@@ -14,3 +14,5 @@ clean:
 	rm -rf ~/.config/nvim
 	rm -rf ~/.zprezto
 	rm -rf ~/.tmux
+	rm -rf ~/.emacs.d
+	rm -rf ~/.doom.d
