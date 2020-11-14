@@ -8,6 +8,9 @@ init:
 install: init
 	installer/bootstrap.sh
 
+update:
+	vim +PlugInstall +UpdateRemotePlugins +qall
+
 clean:
 	rm -rf ~/bin
 	rm -rf ~/gopaths/global
