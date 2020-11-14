@@ -25,32 +25,28 @@ else
     exit 1
 fi
 
+# NPM based tools like,
+# sql-lint, azurite
+installer/npm-tools.sh
+
 # alias nvim as vim
 alias vim="nvim"
 
-# Install core golang package
+# Install essential golang packages, tools and applicaitons
 # set GOPATH
 export GOPATH=${HOME}/gopaths/global
-for PKG in `cat installer/gopkgs.txt`;
+while IFS= read -r PKG
 do
     echo -en "Installing/UPgrading Go package : ${PKG} .....\n"
-    go get $PKG
-done
-
-# Install go apps
-echo -en "Installing essential go tools & applicaitons\n"
-for PKG in `cat installer/gopkgs.txt`;
-do
-    echo -en "${PKG}\n"
-    go get -u ${PKG}
-done
+    go get "$PKG"
+done < installer/gopkgs.txt
 
 # Install zprezto
 if [[ -s "${HOME}/.zprezto/.git/config" ]]; then
     echo -en "zprezto already installed.\n"
 else
     echo -en "Installing zprezto .....\n"
-    git clone --recursive https://github.com/sorin-ionescu/prezto.git $HOME/.zprezto
+    git clone --recursive https://github.com/sorin-ionescu/prezto.git "$HOME/.zprezto"
 fi
 
 # Install neovim config

@@ -42,3 +42,6 @@ Plug 'mhinz/vim-startify'
 
 " See what keys do like in emacs
 Plug 'liuchengxu/vim-which-key'
+
+" Terraform
+Plug 'hashivim/vim-terraform'

@@ -22,10 +22,10 @@ brew install emacs-plus
 brew install code-server
 
 # Git
+brew install gh
 brew tap git-chglog/git-chglog
 brew install git legit git-chglog git-secrets git-flow-avh gitui
-
-#git-tag
+brew install gitversion
 
 # Languages
 brew install python3 pypy3 pyenv pipenv go goenv node nvm rustup
@@ -42,12 +42,18 @@ brew cask install snowflake-snowsql
 brew tap sqitchers/sqitch
 brew install sqitch --with-postgres-support --with-sqlite-support --with-mysql-support --with-snowflake-support
 
-# Cloud CLIs
+# BigData
+brew install hadoop
+
+# Cloud Tools
 brew install awscli azure-cli certbot
 brew tap aws/tap
 brew install aws-sam-cli
+brew tap azure/functions
+brew install azure-functions-core-tools@3
+brew install azcopy
 
-# Buildpack SRC to OCI images
+# Build pack SRC to OCI images
 brew tap buildpack/tap
 brew install pack
 
@@ -58,11 +64,11 @@ brew install ctop lazydocker
 brew install kubectx minikube derailed/k9s/k9s
 
 # Terminal Tools
-brew install fzf tmux htop tree wget hping kube-ps1 fzf zsh-autosuggestions nmap speedtest-cli the_silver_searcher httpie bat newman bat
+brew install fzf tmux htop tree wget hping kube-ps1 fzf zsh-autosuggestions nmap speedtest-cli the_silver_searcher httpie bat newman bat telnet
 brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Library/Formula/sshpass.rb
 
-# Automation Tools
-brew install terraform
+# DevOps Tools
+brew install hashicorp/tap/terraform terragrunt ansible
 
 # Load/Performance Testing Tool
 brew install vegeta iperf3

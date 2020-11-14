@@ -109,6 +109,11 @@ let g:go_highlight_variable_assignments = 1          " Highlight variable names 
 let g:go_highlight_diagnostic_errors = 1             " Highlight diagnostic errors
 let g:go_highlight_diagnostic_warnings = 1           " Highlight diagnostic warnings
 
+" Terraform plugin configs
+let g:terraform_align=1
+let g:terraform_fold_sections=1
+let g:terraform_fmt_on_save=1
+
 " -------------------------------------------------------------------------------------------------
 " coc.nvim default settings
 " -------------------------------------------------------------------------------------------------

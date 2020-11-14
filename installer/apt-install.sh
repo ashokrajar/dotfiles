@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # Core
+sudo apt-get update
+sudo apt-get upgrade -y
 sudo apt-get install -y build-essential inetutils-traceroute traceroute hwinfo xdg-utils
 
 # Editors
@@ -16,10 +18,16 @@ sudo apt-get install -y python-is-python3 python3-pip rustc
 sudo apt-get install -y strace
 
 # Developer tools
-sudo apt-get install -y direnv legit hugo
+sudo apt-get install -y direnv legit hugo yamllint
+
+# Cloud Tools
+wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+sudo apt-get update
+sudo apt-get install -y azure-functions-core-tools-3
 
 # Terminal Tools
-sudo apt-get install -y htop wget curl httpie bat
+sudo apt-get install -y htop wget curl httpie sshpass
 # sudo apt-get install -y tmux
 
 # Install node.js

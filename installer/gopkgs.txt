@@ -30,3 +30,8 @@ github.com/fatih/gomodifytags
 github.com/uudashr/gopkgs/v2/cmd/gopkgs
 github.com/ramya-rao-a/go-outline
 github.com/sqs/goreturns
+github.com/koron/iferr
+golang.org/x/lint/golint
+github.com/jstemmer/gotags
+github.com/josharian/impl
+github.com/klauspost/asmfmt/cmd/asmfmt

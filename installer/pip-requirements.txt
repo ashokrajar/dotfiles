@@ -1,3 +1,4 @@
+ipython
 pipenv
 workon
 virtualenvwrapper
@@ -12,3 +13,4 @@ black
 isort
 nose
 pytest
+databricks
