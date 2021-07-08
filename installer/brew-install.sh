@@ -25,7 +25,7 @@ brew install code-server
 brew install gh
 brew tap git-chglog/git-chglog
 brew install git legit git-chglog git-secrets git-flow-avh gitui
-brew install gitversion
+# brew install gitversion TODO: need to wait for dotnet 6.x release
 
 # Languages
 brew install python3 pypy3 pyenv pipenv go goenv node nvm rustup
@@ -38,9 +38,11 @@ brew install golangci/tap/golangci-lint
 brew install hugo
 brew tap azure/functions
 brew install azure-functions-core-tools@3
-brew cask install snowflake-snowsql
+brew install --cask snowflake-snowsql
 brew tap sqitchers/sqitch
 brew install sqitch --with-postgres-support --with-sqlite-support --with-mysql-support --with-snowflake-support
+brew install dapr/tap/dapr-cli
+brew install encoredev/tap/encore
 
 # BigData
 brew install hadoop
@@ -61,7 +63,9 @@ brew install pack
 brew install ctop lazydocker
 
 # K8
+brew install kubernetes-cli
 brew install kubectx minikube derailed/k9s/k9s
+brew install skaffold
 
 # Terminal Tools
 brew install fzf tmux htop tree wget hping kube-ps1 fzf zsh-autosuggestions nmap speedtest-cli the_silver_searcher httpie bat newman bat telnet
@@ -69,6 +73,9 @@ brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Librar
 
 # DevOps Tools
 brew install hashicorp/tap/terraform terragrunt ansible
+
+# Network tools
+brew install ngrok
 
 # Load/Performance Testing Tool
 brew install vegeta iperf3

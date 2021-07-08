@@ -37,6 +37,14 @@ else
     goenv global 1.14.4
 fi
 
+# Install dapr
+if [[ -s "/usr/local/bin/dapr" ]]; then
+    echo -en "dapr is already installed."
+else
+    echo -en "Installing dapr .....\n"
+    wget -q https://raw.githubusercontent.com/dapr/cli/master/install/install.sh -O - | /bin/bash
+fi
+
 # zsh auto suggestion
 if [[ -s ${HOME}/.zsh-autosuggestions/.git/config ]]; then
     echo -en "zsh-autosuggestions already installed.\n"
