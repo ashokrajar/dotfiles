@@ -1,0 +1,15 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# UUID=8bf12c65-c1d9-4f73-9385-66b8dc6f60d7
+/dev/sda1               /               ext4            rw,relatime     0 1
+/dev/sda3               /srv            ext4            rw,relatime     0 0
+
+# UUID=d46aa7dc-8e9a-4d2b-98e1-989563f293a1
+/dev/sda2               none            swap            defaults        0 0
+
+/dev/sdb                /hanetdrive     ext4            rw,noatime      0 0
+/dev/sdc                /ephemeral      ext4            rw,noatime      0 0
+/dev/sdd                /edrive2        ext4            rw,noatime      0 0
+/dev/sde                /edrive         ext4            rw,noatime      0 0
