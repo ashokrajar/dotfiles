@@ -9,7 +9,7 @@ StrictHostKeyChecking no
 UserKnownHostsFile /dev/null
 Compression no
 ForwardAgent yes
-ForwardX11 yes
+ForwardX11 no
 AddKeysToAgent yes
 StrictHostKeyChecking yes
 
@@ -18,8 +18,8 @@ SendEnv USERPASSWORD
 SendEnv AWS_ACCESS_KEY_ID
 SendEnv AWS_SECRET_ACCESS_KEY
 
+IdentityFile ~/.ssh/id_ecdsa
 IdentityFile ~/.ssh/id_rsa
-IdentityFile ~/.ssh/id_rsa_seconday
 
 Host github.com
     User ashokrajar
@@ -27,14 +27,14 @@ Host github.com
 Host bitbucket.org
     User ashokrajar
 
-Host *.ashokraja.in
-    User ashokraja
-
 Host atom.ashokraja.in
     User pi
 
-Host remotengine
-    Hostname remotengine.ashokraja.in
+Host *.ashokraja.in
+    User ashokraja
+
+Host blog
+    Hostname mylife.ashokraja.in
     User ubuntu
 
 Host remoteproxy\

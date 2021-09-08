@@ -6,9 +6,11 @@ nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 "" themes
 "*****************************************************************************
 
+set termguicolors
+
 " custom color
 let g:onedark_color_overrides = {
-            \ "black": {"gui": "#2F343F", "cterm": "212121", "cterm16": "0" },
+            \ "black": {"gui": "#212121", "cterm": "212121", "cterm16": "0" },
             \}
 
 syntax on

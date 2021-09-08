@@ -1,0 +1,16 @@
+proc            /proc           proc    defaults          0       0
+PARTUUID=901ed23c-01  /boot           vfat    defaults          0       2
+PARTUUID=901ed23c-02  /               ext4    defaults,noatime  0       1
+# a swapfile is not a swap partition, no line here
+#   use  dphys-swapfile swap[on|off]  for that
+
+# /edrive2
+# /dev/disk/by-uuid/00ad496c-fd4b-4d6d-9c6e-acbf881effff /edrive2               ext4    defaults,noatime        0       0
+
+# /edrive
+/dev/disk/by-uuid/3a238246-689d-4f4f-83f2-b2d693afee25 /edrive          ext4    defaults,noatime        0       0
+
+# /edrive2/Entertainment/Movies/English-HD /edrive/Entertainment/Movies/English-HD      auto    defaults,nofail,nobootwait,bind 0       0
+# /edrive2/Entertainment/Movies/English-4K /edrive/Entertainment/Movies/English-4K      auto    defaults,nofail,nobootwait,bind 0       0
+
+/edrive/swapfile        none    swap    defaults        0       0

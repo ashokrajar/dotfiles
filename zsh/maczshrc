@@ -1,5 +1,9 @@
 # golang
-export GOROOT=/usr/local/opt/go/libexec
+if [[ "$(uname -m)" == arm64 ]]; then
+    export GOROOT=/opt/homebrew/opt/go/libexec
+else
+    export GOROOT=/usr/local/opt/go/libexec
+fi
 export GOOS="darwin"
 
 # nvm
@@ -15,7 +19,7 @@ export NVM_DIR="$HOME/.nvm"
 # AWS shell completer
 [[ -f "/usr/local/bin/aws_zsh_completer.sh" ]] && source "/usr/local/bin/aws_zsh_completer.sh"
 
-# iTerm Shell Intergration
+# iTerm Shell Integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Set openssl lib path
@@ -23,5 +27,11 @@ export LDFLAGS="-L/usr/local/opt/openssl/lib -L/usr/local/opt/zlib/lib -L/usr/lo
 export CFLAGS="-I/usr/local/include -L/usr/local/lib"
 export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/sqlite/include"
 
-# HomeBrew
-[[ -f "/opt/homebrew/bin/brew" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
+# Iterm Integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/opt/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/opt/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/google-cloud-sdk/completion.zsh.inc'; fi
