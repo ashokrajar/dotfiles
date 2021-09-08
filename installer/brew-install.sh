@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # install brew
-if [[ -s "/usr/local/bin/brew" ]]; then
+if [[ -s "/usr/local/bin/brew" ]] || [[ -s "/opt/homebrew/bin/brew" ]]; then
     echo -en "brew already installed.\n"
     exit 
 else
