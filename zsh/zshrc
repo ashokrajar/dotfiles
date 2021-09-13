@@ -62,6 +62,9 @@ if [ $commands[pyenv] ]; then
     eval "$(pyenv init -)";
 fi
 
+# pyenv virtual environment wrapper
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
 # direnv
 if [ $commands[direnv] ]; then eval "$(direnv hook zsh)"; fi
 
