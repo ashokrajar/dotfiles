@@ -59,7 +59,7 @@ zstyle ':prezto:module:autosuggestions' color 'yes'
 zstyle ':prezto:module:editor' key-bindings 'emacs'
 
 # Auto convert .... to ../..
-# zstyle ':prezto:module:editor' dot-expansion 'yes'
+zstyle ':prezto:module:editor' dot-expansion 'yes'
 
 #
 # Git
@@ -128,7 +128,7 @@ zstyle ':prezto:module:prompt' theme 'powerlevel10k'
 #
 
 # Set the SSH identities to load into the agent.
-zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_rsa_work'
+zstyle ':prezto:module:ssh:load' identities 'id_ecdsa' 'id_rsa' 'id_rsa_work'
 
 #
 # Syntax Highlighting

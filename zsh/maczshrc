@@ -1,33 +1,46 @@
 # golang
-if [[ "$(uname -m)" == arm64 ]]; then
-    export GOROOT=/opt/homebrew/opt/go/libexec
-else
-    export GOROOT=/usr/local/opt/go/libexec
-fi
 export GOOS="darwin"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 
-# ZSH Auto complete
-[[ -f "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && source "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+if [[ "$(uname -m)" == arm64 ]]; then
+    # golang
+    export GOROOT=/opt/homebrew/opt/go/libexec
 
-# Helm Auto complete
-[[ -f "/usr/local/share/zsh/site-functions/_helm" ]] && source "/usr/local/share/zsh/site-functions/_helm"
+    # Set openssl lib path
+    export LDFLAGS="-L/opt/homebrew/opt/openssl/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/sqlite/lib"
+    export CFLAGS="-I/opt/homebrew/include -L/opt/homebrew/lib"
+    export CPPFLAGS="-I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/sqlite/include"
 
-# AWS shell completer
-[[ -f "/usr/local/bin/aws_zsh_completer.sh" ]] && source "/usr/local/bin/aws_zsh_completer.sh"
+    # ZSH Auto complete
+    [[ -f "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && source "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
+    # Helm Auto complete
+    [[ -f "/opt/homebrew/share/zsh/site-functions/_helm" ]] && source "/opt/homebrew/share/zsh/site-functions/_helm"
+
+    # AWS shell completer
+    [[ -f "/opt/homebrew/bin/aws_zsh_completer.sh" ]] && source "/opt/homebrew/bin/aws_zsh_completer.sh"
+else
+    # golang
+    export GOROOT=/usr/local/opt/go/libexec
+
+    # Set openssl lib path
+    export LDFLAGS="-L/usr/local/opt/openssl/lib -L/usr/local/opt/zlib/lib -L/usr/local/opt/sqlite/lib"
+    export CFLAGS="-I/usr/local/include -L/usr/local/lib"
+    export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/sqlite/include"
+
+    # ZSH Auto complete
+    [[ -f "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && source "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
+    # Helm Auto complete
+    [[ -f "/usr/local/share/zsh/site-functions/_helm" ]] && source "/usr/local/share/zsh/site-functions/_helm"
+
+    # AWS shell completer
+    [[ -f "/usr/local/bin/aws_zsh_completer.sh" ]] && source "/usr/local/bin/aws_zsh_completer.sh"
+fi
 
 # iTerm Shell Integration
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# Set openssl lib path
-export LDFLAGS="-L/usr/local/opt/openssl/lib -L/usr/local/opt/zlib/lib -L/usr/local/opt/sqlite/lib"
-export CFLAGS="-I/usr/local/include -L/usr/local/lib"
-export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/sqlite/include"
-
-# Iterm Integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # The next line updates PATH for the Google Cloud SDK.
