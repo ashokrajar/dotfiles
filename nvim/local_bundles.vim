@@ -45,3 +45,6 @@ Plug 'liuchengxu/vim-which-key'
 
 " Terraform
 Plug 'hashivim/vim-terraform'
+
+" Ansible
+Plug 'pearofducks/ansible-vim'

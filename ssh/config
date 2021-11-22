@@ -19,7 +19,6 @@ SendEnv AWS_ACCESS_KEY_ID
 SendEnv AWS_SECRET_ACCESS_KEY
 
 IdentityFile ~/.ssh/id_ecdsa
-IdentityFile ~/.ssh/id_rsa
 
 Host github.com
     User ashokrajar
