@@ -10,7 +10,7 @@ set termguicolors
 
 " custom color
 let g:onedark_color_overrides = {
-            \ "black": {"gui": "#212121", "cterm": "212121", "cterm16": "0" },
+            \ "black": {"gui": "#0a0a0a", "cterm": "0a0a0a", "cterm16": "0" },
             \}
 
 syntax on
@@ -46,6 +46,9 @@ nmap <leader>8 :b8<CR>
 nmap <leader>9 :b9<CR>
 nmap <leader>0 :b10<CR>
 
+" list buffer shortcuts
+nmap <leader>b :Buffer<CR>
+
 "*****************************************************************************
 "" file handling
 "*****************************************************************************
@@ -76,7 +79,12 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
-"" fzf
+" Magit
+nmap <leader>g :Magit<CR>
+
+" fzf
+nmap <leader>. :FZF<CR>
+
 " Always enable preview window on the right with 60% width
 let g:fzf_preview_window = 'right:60%'
 " colorful preview
@@ -87,6 +95,9 @@ command! -bang -nargs=? -complete=dir Files
 "*****************************************************************************
 "" editing
 "*****************************************************************************
+
+" disable code folding by default
+set nofoldenable
 
 " go plugin configs
 let g:go_fmt_command = "goimports"                   " Run goimports along gofmt on each save
