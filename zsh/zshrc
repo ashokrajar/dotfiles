@@ -44,7 +44,7 @@ export GOPATH=$HOME/gopaths/global
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
 # Rust Lang
-export PATH="$HOME/.cargo/env:$PATH
+export PATH="$HOME/.cargo/env:$PATH"
 
 # jEnv
 if [[ -s "$HOME/.jenv/version" ]]; then
