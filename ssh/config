@@ -39,3 +39,6 @@ Host blog
 Host remoteproxy\
     Hostname us-proxy.ashokraja.in
     User ubuntu
+
+Host ssh.dev.azure.com
+    IdentityFile ~/.ssh/id_rsa
