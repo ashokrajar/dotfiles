@@ -10,6 +10,7 @@ set termguicolors
 
 " custom color
 let g:onedark_color_overrides = {
+            \ "backgroud": {"gui": "#0a0a0a", "cterm": "0a0a0a", "cterm16": "0" },
             \ "black": {"gui": "#0a0a0a", "cterm": "0a0a0a", "cterm16": "0" },
             \}
 
