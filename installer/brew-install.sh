@@ -10,3 +10,4 @@ fi
 
 cp -fv ~/.dotfiles/homebrew/Brewfile ~/.Brewfile
 brew bundle --global
+

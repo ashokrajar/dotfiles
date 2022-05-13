@@ -104,7 +104,6 @@ ln -sf ~/.dotfiles/ssh/config ~/.ssh/config
 ln -sf ~/.dotfiles/zsh/zshrc ~/.zshrc
 ln -sf ~/.dotfiles/zsh/zpreztorc ~/.zpreztorc
 ln -sf ~/.dotfiles/zsh/zprofile ~/.zprofile
-ln -sf ~/.dotfiles/zsh/zsh_history ~/.zsh_history
 ln -sf ~/.dotfiles/zsh/p10k.zsh ~/.p10k.zsh
 
 if [[ "${OSTYPE}" == darwin* ]]; then
