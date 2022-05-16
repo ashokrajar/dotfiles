@@ -21,6 +21,18 @@ cd ~/.dotfiles
 make install
 ```
 
+# Update only the dotfiles
+
+```bash
+make update-links
+```
+
+# Update VIM Plugins
+
+```bash
+make update-vim-plugins
+```
+
 # UnInstall
 
 ```bash

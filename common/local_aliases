@@ -11,6 +11,7 @@ alias vi='nvim'
 alias vim='nvim'
 alias em='emacs -nw --no-splash'
 alias emacs='emacs -nw --no-splash'
+alias fzf="fzf --height=40% --layout=reverse --info=inline --border --preview 'bat --style full --color always {}'"
 
 # git
 alias gitgraph='git log --graph --oneline --decorate --all --source'

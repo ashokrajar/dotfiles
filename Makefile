@@ -8,7 +8,10 @@ init:
 install: init
 	installer/bootstrap.sh
 
-update:
+update-links:
+	installer/linkfiles.sh
+
+update-vim-plugins:
 	vim +PlugInstall +UpdateRemotePlugins +qall
 
 clean:
