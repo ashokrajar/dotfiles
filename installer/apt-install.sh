@@ -6,7 +6,7 @@ sudo apt-get update
 
 # Core
 sudo apt-get upgrade -y
-sudo apt-get install -y build-essential inetutils-traceroute traceroute hwinfo xdg-utils
+sudo apt-get install -y build-essential net-tools inetutils-traceroute hwinfo sysstat lm-sensors python-is-python3 wget curl iperf3 htop iotop iftop zsh nfs-common
 
 # Editors
 # sudo apt-get install -y neovim
