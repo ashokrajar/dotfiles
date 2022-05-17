@@ -23,22 +23,8 @@ IdentityFile ~/.ssh/id_ecdsa
 Host github.com
     User ashokrajar
 
-Host bitbucket.org
-    User ashokrajar
-
-Host atom.ashokraja.in
-    User pi
-
 Host *.ashokraja.in
     User ashokraja
-
-Host blog
-    Hostname mylife.ashokraja.in
-    User ubuntu
-
-Host remoteproxy\
-    Hostname us-proxy.ashokraja.in
-    User ubuntu
 
 Host ssh.dev.azure.com
     IdentityFile ~/.ssh/id_rsa

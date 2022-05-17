@@ -23,14 +23,8 @@ sudo apt-get install -y strace
 # Developer tools
 sudo apt-get install -y direnv legit hugo yamllint gh
 
-# Cloud Tools
-wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
-sudo dpkg -i packages-microsoft-prod.deb
-sudo apt-get update
-sudo apt-get install -y azure-functions-core-tools-3
-
 # Terminal Tools
-sudo apt-get install -y htop wget curl httpie sshpass
+sudo apt-get install -y htop wget curl httpie sshpass bat 
 # sudo apt-get install -y tmux
 
 # Install node.js

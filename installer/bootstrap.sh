@@ -7,23 +7,15 @@ if [[ "${OSTYPE}" == darwin* ]]; then
     # link python
     ln -sf /usr/local/bin/python3 /usr/local/bin/python
     ln -sf /usr/local/bin/pip3 /usr/local/bin/pip
-
-    # Enable fzf
-    /usr/local/opt/fzf/install --all
-
-    # Install core python packages
-    pip install -r installer/pip-requirements.txt
-
 elif [[ "${OSTYPE}" == linux* ]]; then
     installer/linux-install.sh
-
-    # Install core python packages
-    pip3 install -r installer/pip-requirements.txt
-
 else
     echo -en "\nUnSupported Operating System\n\n"
     exit 1
 fi
+    
+# Install core python packages
+pip3 install neovim jedi pyflakes pylint node pytest
 
 # NPM based tools like,
 # sql-lint, azurite
