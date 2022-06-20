@@ -5,6 +5,7 @@
 # common alaias
 alias myip='echo -en "Private IPs :\n\t"; ifconfig | grep inet | egrep -v "inet6|127.0.0.1" | cut -f2 -d" "; echo -en "Public IPs :\n\t"; dig +short myip.opendns.com @resolver1.opendns.com'
 alias flushdns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder; say cache flushed'
+alias passgen='gpg --gen-random --armor 1 15'
 
 # Editors
 alias vi='nvim'

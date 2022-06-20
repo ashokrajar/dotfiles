@@ -49,7 +49,7 @@ else
     curl 'https://vim-bootstrap.com/generate.vim' --data 'editor=nvim&langs=html&langs=go&langs=python&langs=c&langs=rust&langs=html&langs=javascript' > ~/.config/nvim/init.vim
     echo -en "Installing nvim plugins .....\n"
     vim +PlugInstall +UpdateRemotePlugins +qall
-    vim -c 'CocInstall -sync coc-json coc-html coc-python coc-xml coc-yaml coc-sql|q'
+    vim -c 'CocInstall -sync coc-json coc-html coc-go coc-sh coc-tsserver coc-markdownlint coc-pyright coc-xml coc-yaml|q'
 fi
 
 # Install doom emacs
