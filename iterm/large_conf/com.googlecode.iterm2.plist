@@ -2949,7 +2949,7 @@
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>300</integer>
+			<integer>250</integer>
 			<key>Command</key>
 			<string></string>
 			<key>Cursor Color</key>
@@ -3674,7 +3674,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>15</integer>
+			<integer>7</integer>
 			<key>Working Directory</key>
 			<string>/Users/ashokraja</string>
 		</dict>
