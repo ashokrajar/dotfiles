@@ -17,13 +17,8 @@ SendEnv USERPASSWORD
 SendEnv AWS_ACCESS_KEY_ID
 SendEnv AWS_SECRET_ACCESS_KEY
 
-IdentityFile ~/.ssh/id_ecdsa
+IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 
 Host github.com
     User ashokrajar
 
-Host *.ashokraja.in
-    User ashokraja
-
-Host ssh.dev.azure.com
-    IdentityFile ~/.ssh/id_rsa
