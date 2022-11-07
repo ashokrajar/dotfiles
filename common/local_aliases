@@ -41,6 +41,9 @@ alias sshhttpstunnel='ssh -D 8123 -f -C -q -N remoteproxy'
 # Remote VNC Tunnel
 alias homevnctunnel='ssh -L 5900:localhost:5900 cmdcenter'
 
+# Set defaults for some of the tools/commands
+alias rsync='rsync -av --timeout 60 --stats --exclude=".idea" --exclude=".vscode" --exclude=".DS_Store"'
+
 # Pull/Push code from/to work laptop
 alias wl_pull_code='rsync -av --exclude=".idea" --exclude=".vscode" --exclude=".terraform" --exclude=".terragrunt-cache" --exclude=".terraform.lock.hcl" --delete --delete-after --timeout 60 --stats ashok@wl:~/code/ ~/code/work/'
 alias wl_push_code='rsync -av --exclude=".idea" --exclude=".vscode" --exclude=".terraform" --exclude=".terragrunt-cache" --exclude=".terraform.lock.hcl" --delete --delete-after --timeout 60 --stats ~/code/work/ ashok@wl:~/code/'
