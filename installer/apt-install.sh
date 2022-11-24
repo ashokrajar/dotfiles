@@ -24,8 +24,9 @@ sudo apt-get install -y strace
 sudo apt-get install -y direnv legit hugo yamllint gh
 
 # Terminal Tools
-sudo apt-get install -y htop wget curl httpie sshpass bat 
+sudo apt-get install -y htop wget curl httpie sshpass bat fzf fd-find
 # sudo apt-get install -y tmux
+sudo ln -s /usr/bin/fdfind /usr/bin/fd
 
 # Install node.js
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
