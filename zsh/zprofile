@@ -48,6 +48,7 @@ cdpath=(
 path=(
   ~/bin
   ~/.local/bin
+  ~/Library/Application Support/Coursier/bin
   ~/gopaths/global/bin
   /usr/local/{bin,sbin}
   $path
