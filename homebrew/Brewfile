@@ -128,6 +128,7 @@ brew "golangci/tap/golangci-lint"
 brew "hashicorp/tap/boundary"
 brew "rs/tap/jaggr"
 brew "rs/tap/jplot"
+brew "atuin"
 brew "sqitchers/sqitch/sqitch", args: ["with-mysql-support", "with-postgres-support", "with-snowflake-support", "with-sqlite-support"]
 cask "ngrok"
 cask "powershell"

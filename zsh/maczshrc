@@ -49,3 +49,5 @@ if [ -f '/opt/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/google-cloud-
 # Ansbile Fork Issue
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
+# Atuin shell history sync
+eval "$(atuin init zsh --disable-up-arrow)"
