@@ -50,4 +50,4 @@ if [ -f '/opt/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/google-cloud-
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 # Atuin shell history sync
-eval "$(atuin init zsh --disable-up-arrow)"
+eval "$(atuin init zsh --disable-up-arrow --disable-ctrl-r)"
