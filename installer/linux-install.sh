@@ -20,7 +20,7 @@ case $PKG_CMD in
         installer/pacman-install.sh
         ;;
     *)
-        echo -en "\nUnSupported Opearating System\n\n"
+        echo -en "\nUnSupported Operating System\n\n"
         exit 1
         ;;
 esac

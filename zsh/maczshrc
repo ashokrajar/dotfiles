@@ -58,3 +58,6 @@ if [ -f '/opt/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/google-cloud-
 
 # 1Password SSH Agent
 export SSH_AUTH_SOCK=~/.1password/agent.sock
+
+# iTerm Shell Integration
+[[ -f "${HOME}/.iterm2_shell_integration.zsh" ]] && source "${HOME}/.iterm2_shell_integration.zsh"
