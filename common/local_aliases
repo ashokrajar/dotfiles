@@ -44,6 +44,9 @@ alias homevnctunnel='ssh -L 5900:localhost:5900 cmdcenter'
 alias rsync='rsync -a --timeout 60 --stats --exclude=".idea" --exclude=".vscode" --exclude=".DS_Store"  --exclude=".terraform" --exclude=".terragrunt-cache" --exclude=".terraform.lock.hcl"'
 
 # Pull/Push code from/to work laptop
-alias wl_pull_code='rsync -a --exclude=".idea" --exclude=".vscode" --exclude=".terraform" --exclude=".terragrunt-cache" --exclude=".terraform.lock.hcl" --delete --delete-after --timeout 60 --stats ashok@wl:~/code/ ~/code/work/'
-alias wl_push_code='rsync -a --exclude=".idea" --exclude=".vscode" --exclude=".terraform" --exclude=".terragrunt-cache" --exclude=".terraform.lock.hcl" --delete --delete-after --timeout 60 --stats ~/code/work/ ashok@wl:~/code/'
+alias pull_code_from_wl='rsync -a --exclude=".idea" --exclude=".vscode" --exclude=".terraform" --exclude=".terragrunt-cache" --exclude=".terraform.lock.hcl" --delete --delete-after --timeout 60 --stats ashok@wl:~/code/ ~/code/work/'
+alias push_code_to_wl='rsync -a --exclude=".idea" --exclude=".vscode" --exclude=".terraform" --exclude=".terragrunt-cache" --exclude=".terraform.lock.hcl" --delete --delete-after --timeout 60 --stats ~/code/work/ ashok@wl:~/code/'
 
+# Pull/Push code from/to personal laptop
+alias push_code_to_nifflet='rsync -av --exclude=".idea" --exclude=".vscode" --exclude=".terraform" --exclude=".terragrunt-cache" --exclude=".terraform.lock.hcl" --delete --delete-after --timeout 60 --stats ~/code/ ashokraja@niffler:~/code/'
+alias pull_code_from_nifflet='rsync -av --exclude=".idea" --exclude=".vscode" --exclude=".terraform" --exclude=".terragrunt-cache" --exclude=".terraform.lock.hcl" --delete --delete-after --timeout 60 --stats ashokraja@niffler:~/code/ ~/code/'
