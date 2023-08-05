@@ -19,11 +19,4 @@ SendEnv AWS_SECRET_ACCESS_KEY
 
 Host github.com
     User ashokrajar
-    IdentityAgent ~/.1password/agent.sock
-
-Host bitbucket.org
-    IdentityAgent ~/.1password/agent.sock
-
-Host *.ashokraja.in 192.168.0.0/17
-    IdentityAgent ~/.1password/agent.sock
 
