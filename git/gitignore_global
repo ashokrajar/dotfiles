@@ -1,42 +1,107 @@
-# OSX       taken from: https://github.com/github/gitignore/blob/master/Global/OSX.gitignore
 # ----------------------------------------------------------------------------------------------
-.DS_Store
-# Thumbnails
-._*
-# Files that might appear on external disk
-.Spotlight-V100
-.Trashes
+#                                      Operating Systems
+# ----------------------------------------------------------------------------------------------
 
-# Windows   taken from: https://github.com/github/gitignore/blob/master/Global/Windows.gitignore
+#                                         Windows
 # ----------------------------------------------------------------------------------------------
-# Windows image file caches
+# Windows thumbnail cache files
 Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
 
-# MacOS 
-+.DS_Store
+# Dump file
+*.stackdump
 
 # Folder config file
-Desktop.ini
+[Dd]esktop.ini
 
-# Tags      taken from: https://github.com/github/gitignore/blob/master/Global/Tags.gitignore
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+#                                         macOS
 # ----------------------------------------------------------------------------------------------
-# Ignore tags created by etags, ctags, gtags (GNU global) and cscope
-TAGS
-!TAGS/
-tags
-!tags/
-.tags
-.tags1
-gtags.files
-GTAGS
-GRTAGS
-GPATH
-cscope.files
-cscope.out
-cscope.in.out
-cscope.po.out
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
 
-# Vim       taken from: https://github.com/github/gitignore/blob/master/Global/vim.gitignore
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+#                                         Linux
+# ----------------------------------------------------------------------------------------------
+*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
+# ----------------------------------------------------------------------------------------------
+#                                          IDEs
+# ----------------------------------------------------------------------------------------------
+
+#                                         Jetbrains
+# ----------------------------------------------------------------------------------------------
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+.idea/*
+*.iws
+!.idea/copyright
+!.idea/scopes
+!.idea/runConfigurations
+
+#                                         VS Code
+# ----------------------------------------------------------------------------------------------
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+.history/
+*.vsix
+
+#                                         Vim
 # ----------------------------------------------------------------------------------------------
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
@@ -45,24 +110,40 @@ Session.vim
 .netrwhist
 *~
 
-# SASS
 # ----------------------------------------------------------------------------------------------
-.sass-cache
-
-# IDE
+#                                          Languages
 # ----------------------------------------------------------------------------------------------
-.idea/
-atlassian-ide-plugin.xml
-.vscode/
 
-# Custom
+#                                         Go
+# ----------------------------------------------------------------------------------------------
+# Binaries for programs and plugins
+bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Go workspace file
+go.work
+
+# ----------------------------------------------------------------------------------------------
+#                                         Custom
 # ----------------------------------------------------------------------------------------------
 .local_workspecalias
 .bash_workspecalias
 .user_env_pass
 .ssh/id_rsa
 .ssh/id_dsa
+.ssh/id_ecdsa
 .ssh/known_hosts
 .ssh/*.pem
-.env
-.envrc
+.env*
+.envrc*
+.netrc
