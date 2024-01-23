@@ -39,7 +39,10 @@ zstyle ':prezto:load' pmodule \
   'git' \
   'syntax-highlighting' \
   'tmux' \
-  'ssh'
+  'ssh' \
+  'kubernetes' \
+  'direnv' \
+  'kind'
 
 #
 # Autosuggestion

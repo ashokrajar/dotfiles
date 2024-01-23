@@ -8,7 +8,7 @@ case $PKG_CMD in
     apt)
         installer/apt-install.sh
         installer/nvim-install.sh
-        installer/tmux-install.sh
+#        installer/tmux-install.sh
         installer/gitui-install.sh
         ;;
     yum)
@@ -33,16 +33,8 @@ else
     git clone https://github.com/syndbg/goenv.git ~/.goenv
     export GOENV_ROOT="$HOME/.goenv"
     export PATH="$GOENV_ROOT/bin:$PATH"
-    goenv install 1.14.4
-    goenv global 1.14.4
-fi
-
-# Install dapr
-if [[ -s "/usr/local/bin/dapr" ]]; then
-    echo -en "dapr is already installed."
-else
-    echo -en "Installing dapr .....\n"
-    wget -q https://raw.githubusercontent.com/dapr/cli/master/install/install.sh -O - | /bin/bash
+    goenv install 1.21.5
+    goenv global 1.21.5
 fi
 
 # zsh auto suggestion

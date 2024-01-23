@@ -1,5 +1,6 @@
 # Include local configs
 Include localconfig
+Include teleport.cfg
 
 #Config
 TCPKeepAlive yes

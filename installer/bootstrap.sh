@@ -13,7 +13,7 @@ else
     echo -en "\nUnSupported Operating System\n\n"
     exit 1
 fi
-    
+
 # Install core python packages
 pip3 install neovim jedi pyflakes pylint node pytest
 
@@ -24,13 +24,13 @@ installer/npm-tools.sh
 # alias nvim as vim
 alias vim="nvim"
 
-# Install essential golang packages, tools and applicaitons
+# Install essential golang packages, tools and applications
 # set GOPATH
 export GOPATH=${HOME}/gopaths/global
 while IFS= read -r PKG
 do
-    echo -en "Installing/UPgrading Go package : ${PKG} .....\n"
-    go get "$PKG"
+    echo -en "Installing/Upgrading Go package : ${PKG} .....\n"
+    go install "$PKG@latest"
 done < installer/gopkgs.txt
 
 # Install zprezto
@@ -39,6 +39,7 @@ if [[ -s "${HOME}/.zprezto/.git/config" ]]; then
 else
     echo -en "Installing zprezto .....\n"
     git clone --recursive https://github.com/sorin-ionescu/prezto.git "$HOME/.zprezto"
+    git clone --recurse-submodules https://github.com/belak/prezto-contrib "$HOME/.zprezto/contrib"
 fi
 
 # Install neovim config
@@ -50,15 +51,6 @@ else
     echo -en "Installing nvim plugins .....\n"
     vim +PlugInstall +UpdateRemotePlugins +qall
     vim -c 'CocInstall -sync coc-json coc-html coc-go coc-sh coc-tsserver coc-markdownlint coc-pyright coc-xml coc-yaml|q'
-fi
-
-# Install doom emacs
-if [[ -s "${HOME}/.emacs.d/.git/config" ]]; then
-    echo -en "Doom Emacs already installed.\n"
-else
-    echo -en "Installing Doom Emacs .....\n"
-    git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
-    ~/.emacs.d/bin/doom install
 fi
 
 # Install tmux plugin manager

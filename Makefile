@@ -1,17 +1,12 @@
-init-mini:
+init:
 	mkdir -p ~/bin
 	mkdir -p ~/.config/nvim
 	mkdir -p ~/.tmux/plugins/tmp
-
-init: init-mini
 	mkdir -p ~/gopaths/global
 	mkdir -p ~/.ipython/profile_default
 
 install: init
 	installer/bootstrap.sh
-
-install-mini: init-mini
-	installer/bootstrap-mini.sh
 
 update-links:
 	installer/linkfiles.sh
