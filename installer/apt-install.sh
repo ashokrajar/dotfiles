@@ -11,7 +11,7 @@ sudo apt-get update
 
 # Core
 sudo apt-get upgrade -y
-sudo apt-get install -y build-essential net-tools inetutils-traceroute hwinfo sysstat lm-sensors python-is-python3 zsh nfs-common git
+sudo apt-get install -y build-essential net-tools inetutils-traceroute hwinfo sysstat lm-sensors python-is-python3 zsh nfs-common git snapd
 
 # Languages
 sudo apt-get install -y python-is-python3 python3-pip rustc
