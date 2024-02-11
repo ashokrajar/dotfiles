@@ -34,7 +34,6 @@
     # =========================[ Line #1 ]=========================
     os_icon                 # os identifier
     context                 # user@hostname
-    newline                 # \n
     vcs                     # git status
     virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
     anaconda                # conda environment (https://conda.io/)
@@ -60,6 +59,7 @@
     # phpenv                  # php version from phpenv (https://github.com/phpenv/phpenv)
     scalaenv                # scala version from scalaenv (https://github.com/scalaenv/scalaenv)
     # =========================[ Line #2 ]=========================
+    newline                 # \n
     dir                     # current directory
     prompt_char             # prompt symbol
   )
