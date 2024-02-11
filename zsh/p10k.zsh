@@ -34,8 +34,6 @@
     # =========================[ Line #1 ]=========================
     os_icon                 # os identifier
     context                 # user@hostname
-    dir                     # current directory
-    # =========================[ Line #2 ]=========================
     newline                 # \n
     vcs                     # git status
     virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
@@ -61,6 +59,8 @@
     # plenv                   # perl version from plenv (https://github.com/tokuhirom/plenv)
     # phpenv                  # php version from phpenv (https://github.com/phpenv/phpenv)
     scalaenv                # scala version from scalaenv (https://github.com/scalaenv/scalaenv)
+    # =========================[ Line #2 ]=========================
+    dir                     # current directory
     prompt_char             # prompt symbol
   )
 
