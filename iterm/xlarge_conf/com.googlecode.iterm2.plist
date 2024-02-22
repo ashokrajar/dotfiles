@@ -2023,13 +2023,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.93321198225021362</real>
+				<real>0.92941176470588238</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.93339759111404419</real>
+				<real>0.93333333333333335</real>
 				<key>Red Component</key>
-				<real>0.93324452638626099</real>
+				<real>0.92941176470588238</real>
 			</dict>
 			<key>Cursor Guide Color</key>
 			<dict>
@@ -3692,7 +3692,7 @@
 			<key>Rows</key>
 			<integer>80</integer>
 			<key>Screen</key>
-			<integer>-2</integer>
+			<integer>0</integer>
 			<key>Scrollback Lines</key>
 			<integer>0</integer>
 			<key>Scrollback With Status Bar</key>
@@ -4053,7 +4053,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>0</integer>
+			<integer>15</integer>
 			<key>Working Directory</key>
 			<string>/Users/ashokraja</string>
 		</dict>
