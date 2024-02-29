@@ -107,6 +107,10 @@ fi
 
 # Powerlevel10k Cutomization
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
-
+if [[ $TERM_PROGRAM == "WarpTerminal" ]]; then
+    [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k-warp.zsh
+    POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+else
+    [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+    POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+fi

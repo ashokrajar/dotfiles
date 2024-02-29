@@ -27,6 +27,7 @@ ln -sf ~/.dotfiles/zsh/zshrc ~/.zshrc
 ln -sf ~/.dotfiles/zsh/zpreztorc ~/.zpreztorc
 ln -sf ~/.dotfiles/zsh/zprofile ~/.zprofile
 ln -sf ~/.dotfiles/zsh/p10k.zsh ~/.p10k.zsh
+ln -sf ~/.dotfiles/zsh/p10k-warp.zsh ~/.p10k-warp.zsh
 
 if [[ "${OSTYPE}" == darwin* ]]; then
     ln -sf ~/.dotfiles/zsh/maczshrc ~/.maczshrc
