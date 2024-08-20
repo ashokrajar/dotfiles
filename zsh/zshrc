@@ -87,6 +87,11 @@ if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
 # Travis CI
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
+
+# Added by OrbStack: command-line tools and integration
+# Comment this line if you don't want it to be added again.
+[ -f $HOME/.orbstack/shell/init.zsh ] && source ~/.orbstack/shell/init.zsh 2>/dev/null
+
 # A command-line fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --bind 'ctrl-/:toggle-preview'"
