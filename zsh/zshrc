@@ -33,6 +33,10 @@ export LC_ALL=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# Auto load some default completions
+autoload -U +X compinit && compinit -i
+autoload -U +X bashcompinit && bashcompinit -i
+
 # Include OS Specific configs
 if [[ "${OSTYPE}" == darwin* ]]; then
     [[ -f "$HOME/.maczshrc" ]] && source "$HOME/.maczshrc"
