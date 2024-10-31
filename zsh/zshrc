@@ -46,8 +46,7 @@ fi
 
 # golang
 # Goenv
-export GOENV_DISABLE_GOPATH=1
-if [ $commands[goenv] ]; then eval "$(goenv init -)"; fi
+# if [ $commands[goenv] ]; then eval "$(goenv init -)"; fi
 export GOPATH=$HOME/gopaths/global
 
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
