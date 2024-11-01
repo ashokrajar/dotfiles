@@ -5,6 +5,16 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Powerlevel10k Customization
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+if [[ $TERM_PROGRAM == "WarpTerminal" ]]; then
+    [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k-warp.zsh
+    POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+else
+    [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+    POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+fi
+
 #
 # Executes commands at the start of an interactive session.
 #
@@ -108,13 +118,3 @@ _fzf_compgen_path() {
 _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
-
-# Powerlevel10k Cutomization
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-if [[ $TERM_PROGRAM == "WarpTerminal" ]]; then
-    [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k-warp.zsh
-    POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
-else
-    [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-    POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
-fi
