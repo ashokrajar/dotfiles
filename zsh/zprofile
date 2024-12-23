@@ -51,6 +51,7 @@ path=(
   ~/.krew/bin
   ~/gopaths/global/bin
   /usr/local/{bin,sbin}
+  /opt/apps/splunk/bin
   $path
 )
 
