@@ -5,6 +5,7 @@ echo -en "Linking dotfiles .....\n"
 # tmux
 ln -sf ~/.dotfiles/common/tmux.conf ~/.tmux.conf
 ln -sf ~/.dotfiles/common/local_aliases ~/.local_aliases
+ln -sf ~/.dotfiles/common/helper_functions.sh ~/.shell_helper_functions.sh
 ln -sf ~/.dotfiles/common/screenrc ~/.screenrc
 
 # git

@@ -35,6 +35,7 @@ SAVEHIST=10000000
 setopt ALIAS_FUNC_DEF
 # Alias definition
 [[ -f "$HOME/.local_aliases" ]] && source "$HOME/.local_aliases"
+[[ -f "$HOME/.shell_helper_functions.sh" ]] && source "$HOME/.shell_helper_functions.sh"
 [[ -f "$HOME/.local_workspecalias" ]] && source "$HOME/.local_workspecalias"
 [[ -f "$HOME/.user_env_pass" ]] && source "$HOME/.user_env_pass"
 

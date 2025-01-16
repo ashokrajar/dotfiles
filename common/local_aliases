@@ -53,3 +53,7 @@ alias push_code_to_wl='rsync --delete --delete-after ~/code/work/ ashok@wl:~/cod
 # Pull/Push code from/to personal laptop
 alias push_code_to_niffler='rsync --delete --delete-after ~/code/ ashokraja@niffler:~/code/'
 alias pull_code_from_niffler='rsync --delete --delete-after ashokraja@niffler:~/code/ ~/code/'
+
+#
+alias edit=fleet
+alias view=fleet
