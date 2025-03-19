@@ -57,3 +57,5 @@ alias pull_code_from_niffler='rsync --delete --delete-after ashokraja@niffler:~/
 #
 alias edit=fleet
 alias view=fleet
+
+alias zellij='zellij -l welcome'
