@@ -23,7 +23,7 @@ The script should do this: \(ai.prompt)</string>
 	<key>AlternateMouseScroll</key>
 	<true/>
 	<key>AlwaysOpenWindowAtStartup</key>
-	<true/>
+	<false/>
 	<key>AnimateDimming</key>
 	<false/>
 	<key>AutoCommandHistory</key>
@@ -1623,13 +1623,6 @@ The script should do this: \(ai.prompt)</string>
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0xf703-0x300000</key>
-		<dict>
-			<key>Action</key>
-			<integer>10</integer>
-			<key>Text</key>
-			<string>f</string>
-		</dict>
 		<key>0xf703-0x320000</key>
 		<dict>
 			<key>Action</key>
@@ -1728,6 +1721,8 @@ The script should do this: \(ai.prompt)</string>
 	<real>187.16015625</real>
 	<key>MaxVertically</key>
 	<false/>
+	<key>NeverBlockSystemShutdown</key>
+	<true/>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
