@@ -1,5 +1,5 @@
 {
-  "python.pythonPath": "/Users/ashokraja/.pyenv/versions/3.12.9/bin/python",
+  "python.pythonPath": "~/.pyenv/versions/nvim/bin/python",
   "languageserver": {
     "golang": {
       "command": "gopls",
