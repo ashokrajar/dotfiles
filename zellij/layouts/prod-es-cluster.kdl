@@ -1,0 +1,40 @@
+layout name="prod-es-cluster" {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    pane_template name="suspended-lssh" {
+        command "lssh"
+        start_suspended true
+    }
+
+    tab name="master-nodes" {
+        pane split_direction="horizontal" {
+            suspended-lssh { args "prod-es-master-1"; }
+            suspended-lssh { args "prod-es-master-2"; }
+            suspended-lssh { args "prod-es-master-3"; }
+        }
+    }
+
+    tab name="master-nodes" {
+        pane split_direction="vertical" {
+            pane split_direction="horizontal" {
+                suspended-lssh { args "prod-es-datanode-1"; }
+                suspended-lssh { args "prod-es-datanode-2"; }
+                suspended-lssh { args "prod-es-datanode-3"; }
+            }
+            pane split_direction="horizontal" {
+                suspended-lssh { args "prod-es-datanode-4"; }
+                suspended-lssh { args "prod-es-datanode-5"; }
+                suspended-lssh { args "prod-es-datanode-6"; }
+            }
+        }
+    }
+
+}

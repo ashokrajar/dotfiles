@@ -101,6 +101,9 @@ command! -bang -nargs=? -complete=dir Files
 set nofoldenable
 
 " go plugin configs
+let g:python3_host_prog="~/.pyenv/shims/python3"
+
+" go plugin configs
 let g:go_fmt_command = "goimports"                   " Run goimports along gofmt on each save
 let g:go_auto_type_info = 1                          " Automatically get signature/type info for object under cursor     
 let g:go_highlight_array_whitespace_error = 1        " Highlight white space after `[]`
