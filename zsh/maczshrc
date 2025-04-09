@@ -1,7 +1,9 @@
-# nvm
-export NVM_DIR="$HOME/.nvm"
-
+# MacOS Specific ZSH Configs
 if [[ "$(uname -m)" == arm64 ]]; then
+
+    # Enable HomeBrew in MacOS
+    [[ -f "/opt/homebrew/bin/brew" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
+
     # golang
     export GOROOT=/opt/homebrew/opt/go/libexec
 
@@ -18,7 +20,13 @@ if [[ "$(uname -m)" == arm64 ]]; then
 
     # AWS shell completer
     [[ -f "/opt/homebrew/bin/aws_zsh_completer.sh" ]] && source "/opt/homebrew/bin/aws_zsh_completer.sh"
+
+    # Alibaba Cloud shell completer
+    complete -o nospace -F /opt/homebrew/bin/aliyun aliyun
 else
+    # Enable HomeBrew in MacOS
+    [[ -f "/usr/local/bin/brew" ]] && eval "$(/usr/local/bin/brew shellenv)"
+
     # golang
     export GOROOT=/usr/local/opt/go/libexec
 

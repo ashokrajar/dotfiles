@@ -5,6 +5,7 @@ echo -en "Linking dotfiles .....\n"
 # tmux
 ln -sf ~/.dotfiles/common/tmux.conf ~/.tmux.conf
 ln -sf ~/.dotfiles/common/local_aliases ~/.local_aliases
+ln -sf ~/.dotfiles/common/helper_functions.sh ~/.shell_helper_functions.sh
 ln -sf ~/.dotfiles/common/screenrc ~/.screenrc
 
 # git
@@ -27,6 +28,7 @@ ln -sf ~/.dotfiles/zsh/zshrc ~/.zshrc
 ln -sf ~/.dotfiles/zsh/zpreztorc ~/.zpreztorc
 ln -sf ~/.dotfiles/zsh/zprofile ~/.zprofile
 ln -sf ~/.dotfiles/zsh/p10k.zsh ~/.p10k.zsh
+ln -sf ~/.dotfiles/zsh/p10k-warp.zsh ~/.p10k-warp.zsh
 
 if [[ "${OSTYPE}" == darwin* ]]; then
     ln -sf ~/.dotfiles/zsh/maczshrc ~/.maczshrc

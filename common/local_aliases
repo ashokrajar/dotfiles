@@ -13,6 +13,9 @@ alias vim='nvim'
 alias em='emacs -nw --no-splash'
 alias emacs='emacs -nw --no-splash'
 
+# Tmux
+alias show_tmux_colors='for i in {0..255}; do printf "\x1b[38;5;${i}mcolour${i}\x1b[0m\n"; done'
+
 # git
 alias gitgraph='git log --graph --oneline --decorate --all --source'
 
@@ -50,3 +53,9 @@ alias push_code_to_wl='rsync --delete --delete-after ~/code/work/ ashok@wl:~/cod
 # Pull/Push code from/to personal laptop
 alias push_code_to_niffler='rsync --delete --delete-after ~/code/ ashokraja@niffler:~/code/'
 alias pull_code_from_niffler='rsync --delete --delete-after ashokraja@niffler:~/code/ ~/code/'
+
+#
+alias edit=fleet
+alias view=fleet
+
+alias zellij='zellij -l welcome'

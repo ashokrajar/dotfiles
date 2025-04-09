@@ -1,21 +1,13 @@
 #!/bin/bash
 
-curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 sudo apt-get update
 
 # Core
 sudo apt-get upgrade -y
-sudo apt-get install -y build-essential net-tools inetutils-traceroute hwinfo sysstat lm-sensors python-is-python3 wget curl iperf3 htop iotop iftop zsh nfs-common
-
-# Editors
-# sudo apt-get install -y neovim
-
-# Git
-sudo apt-get install -y git
+sudo apt-get install -y net-tools inetutils-traceroute hwinfo sysstat lm-sensors python-is-python3 zsh nfs-common git
 
 # Languages
-sudo apt-get install -y python-is-python3 python3-pip rustc
+sudo apt-get install -y python-is-python3
 
 # Debug tools
 sudo apt-get install -y strace
@@ -25,12 +17,8 @@ sudo apt-get install -y direnv legit hugo yamllint gh
 
 # Terminal Tools
 sudo apt-get install -y htop wget curl httpie sshpass bat fzf fd-find
-# sudo apt-get install -y tmux
+sudo apt-get install -y tmux
 sudo ln -s /usr/bin/fdfind /usr/bin/fd
-
-# Install node.js
-curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-sudo apt-get install -y nodejs
 
 # Load/Performance Testing Tool
 sudo apt-get install -y iperf3

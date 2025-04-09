@@ -5,6 +5,16 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Powerlevel10k Customization
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+if [[ $TERM_PROGRAM == "WarpTerminal" ]]; then
+    [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k-warp.zsh
+    POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+else
+    [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+    POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+fi
+
 #
 # Executes commands at the start of an interactive session.
 #
@@ -25,27 +35,29 @@ SAVEHIST=10000000
 setopt ALIAS_FUNC_DEF
 # Alias definition
 [[ -f "$HOME/.local_aliases" ]] && source "$HOME/.local_aliases"
+[[ -f "$HOME/.shell_helper_functions.sh" ]] && source "$HOME/.shell_helper_functions.sh"
 [[ -f "$HOME/.local_workspecalias" ]] && source "$HOME/.local_workspecalias"
 [[ -f "$HOME/.user_env_pass" ]] && source "$HOME/.user_env_pass"
 
-# LANG 
+# LANG
 export LC_ALL=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# Enable HomeBrew in MacOS
+# Auto load some default completions
+autoload -U +X compinit && compinit -i
+autoload -U +X bashcompinit && bashcompinit -i
+
+# Include OS Specific configs
 if [[ "${OSTYPE}" == darwin* ]]; then
-    if [[ "$(uname -m)" == arm64 ]]; then
-        [[ -f "/opt/homebrew/bin/brew" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
-    else
-        [[ -f "/usr/local/bin/brew" ]] && eval "$(/usr/local/bin/brew shellenv)"
-    fi
+    [[ -f "$HOME/.maczshrc" ]] && source "$HOME/.maczshrc"
+elif [[ "${OSTYPE}" == linux* ]]; then
+    [[ -f "$HOME/.linuxzshrc" ]] && source "$HOME/.linuxzshrc"
 fi
 
 # golang
 # Goenv
-export GOENV_DISABLE_GOPATH=1
-if [ $commands[goenv] ]; then eval "$(goenv init -)"; fi
+# if [ $commands[goenv] ]; then eval "$(goenv init -)"; fi
 export GOPATH=$HOME/gopaths/global
 
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
@@ -57,7 +69,7 @@ export PATH="$HOME/.cargo/env:$PATH"
 if [[ -s "$HOME/.jenv/version" ]]; then
     export PATH="$HOME/.jenv/bin:$PATH"
     eval "$(jenv init -)"
-    export JAVA_HOME="$(jenv javahome)"    
+    export JAVA_HOME="$(jenv javahome)"
 fi
 
 # rvm
@@ -72,6 +84,11 @@ if [ $commands[pyenv] ]; then
     eval "$(pyenv virtualenv-init -)"
 fi
 
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # pyenv virtual environment wrapper
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
@@ -83,6 +100,11 @@ if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
 
 # Travis CI
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
+
+
+# Added by OrbStack: command-line tools and integration
+# Comment this line if you don't want it to be added again.
+[ -f $HOME/.orbstack/shell/init.zsh ] && source ~/.orbstack/shell/init.zsh 2>/dev/null
 
 # A command-line fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -97,16 +119,3 @@ _fzf_compgen_path() {
 _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
-
-# Include OS Specific configs
-if [[ "${OSTYPE}" == darwin* ]]; then
-    [[ -f "$HOME/.maczshrc" ]] && source "$HOME/.maczshrc"
-elif [[ "${OSTYPE}" == linux* ]]; then
-    [[ -f "$HOME/.linuxzshrc" ]] && source "$HOME/.linuxzshrc"
-fi
-
-# Powerlevel10k Cutomization
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
-
