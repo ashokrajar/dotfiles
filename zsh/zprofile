@@ -49,6 +49,7 @@ path=(
   ~/bin
   ~/.local/bin
   ~/.krew/bin
+  ~/.lmstudio/bin
   ~/gopaths/global/bin
   /usr/local/{bin,sbin}
   /opt/apps/splunk/bin
