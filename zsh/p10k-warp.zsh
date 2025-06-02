@@ -45,7 +45,6 @@
     # laravel_version       # laravel php framework version (https://laravel.com/)
     java_version          # java version (https://www.java.com/)
     # =========================[ Line #2 ]=========================
-    newline                 # \n
     # haskell_stack           # haskell version from stack (https://haskellstack.org/)
     kubecontext             # current kubernetes context (https://kubernetes.io/)
     terraform               # terraform workspace (https://www.terraform.io)
@@ -57,6 +56,8 @@
     google_app_cred         # google application credentials (https://cloud.google.com/docs/authentication/production)
     toolbox                 # toolbox name (https://github.com/containers/toolbox)
     ranger                  # ranger shell (https://github.com/ranger/ranger)
+    # =========================[ Line #3 ]=========================
+    newline                 # \n
     prompt_char             # prompt symbol
   )
 
