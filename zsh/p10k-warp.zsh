@@ -36,27 +36,17 @@
     context                 # user@hostname
     dir                     # current directory
     vcs                     # git status
-    asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
-    node_version          # node.js version
-    go_version            # go version (https://golang.org)
-    rust_version          # rustc version (https://www.rust-lang.org)
-    # dotnet_version        # .NET version (https://dotnet.microsoft.com)
-    # php_version           # php version (https://www.php.net/)
-    # laravel_version       # laravel php framework version (https://laravel.com/)
-    java_version          # java version (https://www.java.com/)
-    # =========================[ Line #2 ]=========================
     # haskell_stack           # haskell version from stack (https://haskellstack.org/)
     kubecontext             # current kubernetes context (https://kubernetes.io/)
     terraform               # terraform workspace (https://www.terraform.io)
-    # terraform_version     # terraform version (https://www.terraform.io)
     aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
-    aws_eb_env              # aws elastic beanstalk environment (https://aws.amazon.com/elasticbeanstalk/)
+    # aws_eb_env              # aws elastic beanstalk environment (https://aws.amazon.com/elasticbeanstalk/)
     azure                   # azure account name (https://docs.microsoft.com/en-us/cli/azure)
     gcloud                  # google cloud cli account and project (https://cloud.google.com/)
     google_app_cred         # google application credentials (https://cloud.google.com/docs/authentication/production)
     toolbox                 # toolbox name (https://github.com/containers/toolbox)
     ranger                  # ranger shell (https://github.com/ranger/ranger)
-    # =========================[ Line #3 ]=========================
+    # =========================[ Line #2 ]=========================
     newline                 # \n
     prompt_char             # prompt symbol
   )
@@ -70,7 +60,16 @@
     status                  # exit code of the last command
     command_execution_time  # duration of the last command
     background_jobs         # presence of background jobs
-#    direnv                  # direnv status (https://direnv.net/)
+    direnv                  # direnv status (https://direnv.net/)
+    # terraform_version     # terraform version (https://www.terraform.io)
+    asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
+    node_version          # node.js version
+    go_version            # go version (https://golang.org)
+    rust_version          # rustc version (https://www.rust-lang.org)
+    # dotnet_version        # .NET version (https://dotnet.microsoft.com)
+    # php_version           # php version (https://www.php.net/)
+    # laravel_version       # laravel php framework version (https://laravel.com/)
+    java_version          # java version (https://www.java.com/)
     virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
     anaconda                # conda environment (https://conda.io/)
     pyenv                   # python environment (https://github.com/pyenv/pyenv)
