@@ -5,7 +5,7 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
-#
+# Load zprofile if not already loaded to prevent duplicate initialization
 if [[ -z "$ZPROFILE_LOADED" ]]; then
     [[ -f ~/.zprofile ]] && source ~/.zprofile
 fi
