@@ -6,6 +6,7 @@ dot files and configs.
 :( shouldn't these files be hidden
 
 # Tested on
+
 * macOS 10.15.X
 * Ubuntu 18.04
 * Archlinux

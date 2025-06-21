@@ -1,8 +1,20 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+#
+if [[ -z "$ZPROFILE_LOADED" ]]; then
+    [[ -f ~/.zprofile ]] && source ~/.zprofile
+fi
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # Powerlevel10k Customization
@@ -14,13 +26,6 @@ else
     [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
     POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 fi
-
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
 
 # Source Prezto.
 [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]] && source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -86,11 +91,11 @@ fi
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 # pyenv virtual environment wrapper
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+if which pyenv-virtualenv-init >/dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 # direnv
 if [ $commands[direnv] ]; then eval "$(direnv hook zsh)"; fi
@@ -102,9 +107,35 @@ if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Added by OrbStack: command-line tools and integration
 # Comment this line if you don't want it to be added again.
-[ -f $HOME/.orbstack/shell/init.zsh ] && source ~/.orbstack/shell/init.zsh 2>/dev/null
+[ -f $HOME/.orbstack/shell/init.zsh ] && source ~/.orbstack/shell/init.zsh 2 >/dev/null
 
 # A command-line fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -112,10 +143,10 @@ export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --bind 'ctrl-/:t
 
 # Use fd (https://github.com/sharkdp/fd) instead of the default find
 _fzf_compgen_path() {
-  fd --hidden --follow --exclude ".git" . "$1"
+    fd --hidden --follow --exclude ".git" . "$1"
 }
 
 # Use fd to generate the list for directory completion
 _fzf_compgen_dir() {
-  fd --type d --hidden --follow --exclude ".git" . "$1"
+    fd --type d --hidden --follow --exclude ".git" . "$1"
 }
