@@ -1,13 +1,16 @@
 #! /bin/bash                                                                                                                                                                                                                                                                      
-# Check the host in local DB
-grep $1 /home/ashokr/mssh.db 2> /dev/null 1> /dev/null
-if [ $? -eq 0 ];then
-        yssh $1
+DB_FILE="${HOME}/.mssh.db"
+# Ensure the database file exists
+[ -f "$DB_FILE" ] || touch "$DB_FILE"
+
+# Check if the host already exists in the local DB (exact match)
+if grep -Fxq "$1" "$DB_FILE" 2>/dev/null; then
+        yssh "$1"
 else
         cd ~/.push
-        tar zhcf - . 2> /dev/null| yssh $1 "tar zpvxf -"
-        if [ $? -eq 0 ];then
-                echo $1 >> /home/ashokr/mssh.db 
-                yssh $1
+        tar zhcf - . 2>/dev/null | yssh "$1" "tar zpvxf -"
+        if [ $? -eq 0 ]; then
+                echo "$1" >> "$DB_FILE"
+                yssh "$1"
         fi
 fi
