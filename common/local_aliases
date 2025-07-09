@@ -20,7 +20,7 @@ alias show_tmux_colors='for i in {0..255}; do printf "\x1b[38;5;${i}mcolour${i}\
 alias gitgraph='git log --graph --oneline --decorate --all --source'
 
 # Python
-alias python='python'
+alias python='python3'
 alias pip='pip3'
 
 # tmux
@@ -54,8 +54,10 @@ alias push_code_to_wl='rsync --delete --delete-after ~/code/work/ ashok@wl:~/cod
 alias push_code_to_niffler='rsync --delete --delete-after ~/code/ ashokraja@niffler:~/code/'
 alias pull_code_from_niffler='rsync --delete --delete-after ashokraja@niffler:~/code/ ~/code/'
 
-#
+# Editors
 alias edit=fleet
 alias view=fleet
+alias cat=bat
+alias less=bat
 
 alias zellij='zellij -l welcome'
