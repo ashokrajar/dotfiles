@@ -12,7 +12,7 @@ endif
 
 let g:vim_bootstrap_langs = "c,elixir,erlang,go,haskell,html,javascript,lisp,perl,php,python,ruby,rust,scala,typescript"
 let g:vim_bootstrap_editor = "nvim"				" nvim or vim
-let g:vim_bootstrap_theme = "onedark"
+let g:vim_bootstrap_theme = "codedark"
 let g:vim_bootstrap_frams = "svelte,vuejs"
 
 if !filereadable(vimplug_exists)
@@ -50,6 +50,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :GBrowse
 Plug 'joshdick/onedark.vim'
+Plug 'tomasiser/vim-code-dark'
 
 
 if isdirectory('/usr/local/opt/fzf')
@@ -256,7 +257,7 @@ set ruler
 set number
 
 let no_buffers_menu=1
-colorscheme onedark
+colorscheme codedark
 
 
 " Better command line completion 
