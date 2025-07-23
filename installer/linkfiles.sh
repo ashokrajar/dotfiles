@@ -13,6 +13,7 @@ ln -sf ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -sf ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 
 # nvim
+ln -sf ~/.dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 ln -sf ~/.dotfiles/nvim/local_init.vim ~/.config/nvim/local_init.vim
 ln -sf ~/.dotfiles/nvim/local_bundles.vim ~/.config/nvim/local_bundles.vim
 ln -sf ~/.dotfiles/nvim/coc-settings.json ~/.config/nvim/coc-settings.json

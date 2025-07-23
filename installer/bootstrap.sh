@@ -14,8 +14,21 @@ else
     exit 1
 fi
 
-# Install python
-pyenv install 3.12.9
+# Check if pyenv is installed
+if command -v pyenv &> /dev/null; then
+    echo -en "pyenv is already installed.\n"
+else
+    echo -en "pyenv is not installed. Please install it first.\n"
+    exit 1
+fi
+
+# Install python if not already installed
+if pyenv versions | grep -q "3.12.9"; then
+    echo -en "Python 3.12.9 is already installed via pyenv.\n"
+else
+    echo -en "Installing Python 3.12.9 via pyenv.....\n"
+    pyenv install 3.12.9
+fi
 
 # alias nvim as vim
 alias vim="nvim"
@@ -43,11 +56,19 @@ else
 fi
 
 # Install FZF
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install --all --completion --key-bindings --no-update-rc
+if [[ -d "${HOME}/.fzf" ]]; then
+    echo -en "FZF already installed.\n"
+else
+    echo -en "Installing FZF.....\n"
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install --all --completion --key-bindings --no-update-rc
+fi
+
+# linkfiles
+installer/linkfiles.sh
 
 # Install neovim config
-if [[ -s "${HOME}/.config/nvim/init.vim" ]]; then
+if pyenv virtualenvs | grep -q "nvim"; then
     echo -en "NeoVim already initialized.\n"
 else
     # Create python env for Nvim packages
@@ -61,9 +82,6 @@ else
     vim +PlugInstall +UpdateRemotePlugins +qall
     vim -c 'CocInstall -sync coc-json coc-html coc-go coc-sh coc-tsserver coc-markdownlint coc-pyright coc-xml coc-yaml|q'
 fi
-
-# linkfiles
-installer/linkfiles.sh
 
 # Install tmux plugin manager
 if [[ -s "${HOME}/.tmux/plugins/tpm/.git/config" ]]; then

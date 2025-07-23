@@ -1,4 +1,4 @@
-" vim-bootstrap 2025-02-17 04:14:22
+" vim-bootstrap 2025-07-23 07:23:30
 
 "*****************************************************************************
 "" Vim-Plug core
@@ -10,9 +10,9 @@ else
   let curl_exists=expand('curl')
 endif
 
-let g:vim_bootstrap_langs = "c,erlang,go,html,javascript,lisp,lua,python,ruby,rust,scala,typescript"
+let g:vim_bootstrap_langs = "c,elixir,erlang,go,haskell,html,javascript,lisp,perl,php,python,ruby,rust,scala,typescript"
 let g:vim_bootstrap_editor = "nvim"				" nvim or vim
-let g:vim_bootstrap_theme = "codedark"
+let g:vim_bootstrap_theme = "onedark"
 let g:vim_bootstrap_frams = "svelte,vuejs"
 
 if !filereadable(vimplug_exists)
@@ -41,7 +41,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
-Plug 'jreybert/vimagit'
 Plug 'vim-scripts/grep.vim'
 Plug 'vim-scripts/CSApprox'
 Plug 'Raimondi/delimitMate'
@@ -49,8 +48,8 @@ Plug 'majutsushi/tagbar'
 Plug 'dense-analysis/ale'
 Plug 'Yggdroot/indentLine'
 Plug 'editor-bootstrap/vim-bootstrap-updater'
-Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
-Plug 'tomasiser/vim-code-dark'
+Plug 'tpope/vim-rhubarb' " required by fugitive to :GBrowse
+Plug 'joshdick/onedark.vim'
 
 
 if isdirectory('/usr/local/opt/fzf')
@@ -82,6 +81,11 @@ Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
 Plug 'ludwig/split-manpage.vim'
 
 
+" elixir
+Plug 'elixir-lang/vim-elixir'
+Plug 'carlosgaldino/elixir-snippets'
+
+
 " erlang
 Plug 'jimenezrick/vimerl'
 
@@ -89,6 +93,13 @@ Plug 'jimenezrick/vimerl'
 " go
 "" Go Lang Bundle
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
+
+
+" haskell
+"" Haskell Bundle
+Plug 'eagletmt/neco-ghc'
+Plug 'dag/vim2hs'
+Plug 'pbrisbin/vim-syntax-shakespeare'
 
 
 " html
@@ -109,10 +120,16 @@ Plug 'jelera/vim-javascript-syntax'
 Plug 'vim-scripts/slimv.vim'
 
 
-" lua
-"" Lua Bundle
-Plug 'xolox/vim-lua-ftplugin'
-Plug 'xolox/vim-lua-inspect'
+" perl
+"" Perl Bundle
+Plug 'vim-perl/vim-perl'
+Plug 'c9s/perlomni.vim'
+
+
+" php
+"" PHP Bundle
+Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install --no-dev -o'}
+Plug 'stephpy/vim-php-cs-fixer'
 
 
 " python
@@ -239,10 +256,10 @@ set ruler
 set number
 
 let no_buffers_menu=1
-colorscheme codedark
+colorscheme onedark
 
 
-" Better command line completion
+" Better command line completion 
 set wildmenu
 
 " mouse support
@@ -265,7 +282,7 @@ else
   let g:indentLine_enabled = 1
   let g:indentLine_concealcursor = 'nc'
   let g:indentLine_char = '┆'
-  let g:indentLine_faster = 1
+  let g:indentLine_faster = 1  
 endif
 
 
@@ -514,7 +531,7 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 "" Open current line on GitHub
-nnoremap <Leader>o :.Gbrowse<CR>
+nnoremap <Leader>o :.GBrowse<CR>
 
 "*****************************************************************************
 "" Custom configs
@@ -523,6 +540,14 @@ nnoremap <Leader>o :.Gbrowse<CR>
 " c
 autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
+
+
+" elixir
+
+
+" erlang
+let erlang_folding = 1
+let erlang_show_errors = 1
 
 
 " go
@@ -593,6 +618,13 @@ augroup END
     \"go": ['golint', 'go vet'], })
 
 
+" haskell
+let g:haskell_conceal_wide = 1
+let g:haskell_multiline_strings = 1
+let g:necoghc_enable_detailed_browse = 1
+autocmd Filetype haskell setlocal omnifunc=necoghc#omnifunc
+
+
 " html
 " for html files, 2 spaces
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
@@ -606,6 +638,39 @@ augroup vimrc-javascript
   autocmd!
   autocmd FileType javascript setl tabstop=4|setl shiftwidth=4|setl expandtab softtabstop=4
 augroup END
+
+
+" lisp
+
+
+" perl
+
+
+" php
+" Phpactor plugin
+" Include use statement
+nmap <Leader>u :call phpactor#UseAdd()<CR>
+" Invoke the context menu
+nmap <Leader>mm :call phpactor#ContextMenu()<CR>
+" Invoke the navigation menu
+nmap <Leader>nn :call phpactor#Navigate()<CR>
+" Goto definition of class or class member under the cursor
+nmap <Leader>oo :call phpactor#GotoDefinition()<CR>
+nmap <Leader>oh :call phpactor#GotoDefinition('hsplit')<CR>
+nmap <Leader>ov :call phpactor#GotoDefinition('vsplit')<CR>
+nmap <Leader>ot :call phpactor#GotoDefinition('tabnew')<CR>
+" Show brief information about the symbol under the cursor
+nmap <Leader>K :call phpactor#Hover()<CR>
+" Transform the classes in the current file
+nmap <Leader>tt :call phpactor#Transform()<CR>
+" Generate a new class (replacing the current file)
+nmap <Leader>cc :call phpactor#ClassNew()<CR>
+" Extract expression (normal mode)
+nmap <silent><Leader>ee :call phpactor#ExtractExpression(v:false)<CR>
+" Extract expression from selection
+vmap <silent><Leader>ee :<C-U>call phpactor#ExtractExpression(v:true)<CR>
+" Extract method from selection
+vmap <silent><Leader>em :<C-U>call phpactor#ExtractMethod()<CR>
 
 
 " python
@@ -639,6 +704,53 @@ let g:airline#extensions#virtualenv#enabled = 1
 let python_highlight_all = 1
 
 
+" ruby
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_rails = 1
+
+augroup vimrc-ruby
+  autocmd!
+  autocmd BufNewFile,BufRead *.rb,*.rbw,*.gemspec setlocal filetype=ruby
+  autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2
+augroup END
+
+let g:tagbar_type_ruby = {
+    \ 'kinds' : [
+        \ 'm:modules',
+        \ 'c:classes',
+        \ 'd:describes',
+        \ 'C:contexts',
+        \ 'f:methods',
+        \ 'F:singleton methods'
+    \ ]
+\ }
+
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+" For ruby refactory
+if has('nvim')
+  runtime! macros/matchit.vim
+else
+  packadd! matchit
+endif
+
+" Ruby refactory
+nnoremap <leader>rap  :RAddParameter<cr>
+nnoremap <leader>rcpc :RConvertPostConditional<cr>
+nnoremap <leader>rel  :RExtractLet<cr>
+vnoremap <leader>rec  :RExtractConstant<cr>
+vnoremap <leader>relv :RExtractLocalVariable<cr>
+nnoremap <leader>rit  :RInlineTemp<cr>
+vnoremap <leader>rrlv :RRenameLocalVariable<cr>
+vnoremap <leader>rriv :RRenameInstanceVariable<cr>
+vnoremap <leader>rem  :RExtractMethod<cr>
+
+
 " rust
 " Vim racer
 au FileType rust nmap gd <Plug>(rust-def)
@@ -646,6 +758,24 @@ au FileType rust nmap gs <Plug>(rust-def-split)
 au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
+
+" scala
+
+
+" typescript
+let g:yats_host_keyword = 1
+
+
+
+" svelte
+let g:vim_svelte_plugin_load_full_syntax = 1
+
+
+" vuejs
+" vim vue
+let g:vue_disable_pre_processors=1
+" vim vue plugin
+let g:vim_vue_plugin_load_full_syntax = 1
 
 
 "*****************************************************************************
