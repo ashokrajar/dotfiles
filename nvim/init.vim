@@ -50,7 +50,7 @@ Plug 'dense-analysis/ale'
 Plug 'Yggdroot/indentLine'
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
-Plug 'tomasr/molokai'
+Plug 'tomasiser/vim-code-dark'
 
 
 if isdirectory('/usr/local/opt/fzf')
@@ -239,7 +239,7 @@ set ruler
 set number
 
 let no_buffers_menu=1
-colorscheme molokai
+colorscheme codedark
 
 
 " Better command line completion
@@ -250,11 +250,11 @@ set mouse=a
 
 set mousemodel=popup
 set t_Co=256
-set guioptions=egmrti
 set gfn=Monospace\ 10
 
 if has("gui_running")
   if has("gui_mac") || has("gui_macvim")
+    set guioptions=egmrti
     set guifont=Menlo:h12
     set transparency=7
   endif
