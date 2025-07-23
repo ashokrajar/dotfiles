@@ -1575,7 +1575,7 @@ The script should do this: \(ai.prompt)</string>
 	<key>EnableAPIServer</key>
 	<true/>
 	<key>EnableProxyIcon</key>
-	<false/>
+	<true/>
 	<key>EnableRendezvous</key>
 	<false/>
 	<key>EnterCopyModeAutomatically</key>
@@ -1991,7 +1991,7 @@ The script should do this: \(ai.prompt)</string>
 			<key>Background Image Is Tiled</key>
 			<false/>
 			<key>Background Image Mode</key>
-			<integer>3</integer>
+			<integer>1</integer>
 			<key>Badge Color</key>
 			<dict>
 				<key>Alpha Component</key>
