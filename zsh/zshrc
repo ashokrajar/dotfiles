@@ -106,33 +106,6 @@ if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
 # Travis CI
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Added by OrbStack: command-line tools and integration
 # Comment this line if you don't want it to be added again.
 [ -f $HOME/.orbstack/shell/init.zsh ] && source ~/.orbstack/shell/init.zsh 2 >/dev/null
@@ -150,3 +123,7 @@ _fzf_compgen_path() {
 _fzf_compgen_dir() {
     fd --type d --hidden --follow --exclude ".git" . "$1"
 }
+
+# Dummy Secrets
+export AWS_SECRET_ACCESS_KEY=ffasdfasdf1312312341231231
+export OPENAI_KEYS=fasdfl;ksdjfasdfsdfjaksdjfl12asdfj23lasdkf
