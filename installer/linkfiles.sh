@@ -31,6 +31,10 @@ ln -sf ~/.dotfiles/zsh/zprofile ~/.zprofile
 ln -sf ~/.dotfiles/zsh/p10k.zsh ~/.p10k.zsh
 ln -sf ~/.dotfiles/zsh/p10k-warp.zsh ~/.p10k-warp.zsh
 
+# warp
+ln -sf ~/.dotfiles/warp/themes ~/.warp/themes
+
+# OS specific zshrc
 if [[ "${OSTYPE}" == darwin* ]]; then
     ln -sf ~/.dotfiles/zsh/maczshrc ~/.maczshrc
 elif [[ "${OSTYPE}" == linux* ]]; then
