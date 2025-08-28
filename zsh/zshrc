@@ -125,5 +125,5 @@ _fzf_compgen_dir() {
 }
 
 # Dummy Secrets
-export AWS_SECRET_ACCESS_KEY=ffasdfasdf1312312341231231
-export OPENAI_KEYS=fasdfl;ksdjfasdfsdfjaksdjfl12asdfj23lasdkf
+# export AWS_SECRET_ACCESS_KEY=ffasdfasdf1312312341231231
+# export OPENAI_KEYS=fasdfl;ksdjfasdfsdfjaksdjfl12asdfj23lasdkf
