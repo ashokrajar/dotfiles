@@ -55,8 +55,8 @@ alias push_code_to_niffler='rsync --delete --delete-after ~/code/ ashokraja@niff
 alias pull_code_from_niffler='rsync --delete --delete-after ashokraja@niffler:~/code/ ~/code/'
 
 # Editors
-alias edit=fleet
-alias view=fleet
+alias edit=cursor
+alias view=cursor
 alias cat=bat
 alias less=bat
 
