@@ -74,7 +74,7 @@ export GOPATH=$HOME/gopaths/global
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
 # Rust Lang
-export PATH="$HOME/.cargo/env:$PATH"
+[[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 
 # jEnv
 if [[ -s "$HOME/.jenv/version" ]]; then
@@ -95,13 +95,16 @@ if [ $commands[pyenv] ]; then
     eval "$(pyenv virtualenv-init -)"
 fi
 
-# NVM
+# NVM — lazy load to avoid slow init in Zellij/multiplexer panes
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-
-# pyenv virtual environment wrapper
-if which pyenv-virtualenv-init >/dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+_nvm_load() {
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+}
+nvm() { unfunction nvm node npm npx 2>/dev/null; _nvm_load; nvm "$@"; }
+node() { unfunction nvm node npm npx 2>/dev/null; _nvm_load; node "$@"; }
+npm() { unfunction nvm node npm npx 2>/dev/null; _nvm_load; npm "$@"; }
+npx() { unfunction nvm node npm npx 2>/dev/null; _nvm_load; npx "$@"; }
 
 # direnv
 if [ $commands[direnv] ]; then eval "$(direnv hook zsh)"; fi
@@ -114,7 +117,7 @@ if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
 
 # Added by OrbStack: command-line tools and integration
 # Comment this line if you don't want it to be added again.
-[ -f $HOME/.orbstack/shell/init.zsh ] && source ~/.orbstack/shell/init.zsh 2 >/dev/null
+[[ -f $HOME/.orbstack/shell/init.zsh && ":$PATH:" != *":$HOME/.orbstack/bin:"* ]] && source ~/.orbstack/shell/init.zsh 2>/dev/null
 
 # A command-line fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
