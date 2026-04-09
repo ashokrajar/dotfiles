@@ -94,8 +94,17 @@ if [ $commands[pyenv] ]; then
     eval "$(pyenv virtualenv-init -)"
 fi
 
-# NVM — lazy load the shell function only; node/npm/npx use inherited PATH
+# NVM — add default node to PATH at startup; lazy-load the nvm command itself
 export NVM_DIR="$HOME/.nvm"
+if [[ -d "$NVM_DIR" ]]; then
+    _nvm_default=$(cat "$NVM_DIR/alias/default" 2>/dev/null)
+    while [[ -n "$_nvm_default" && -f "$NVM_DIR/alias/$_nvm_default" ]]; do
+        _nvm_default=$(cat "$NVM_DIR/alias/$_nvm_default")
+    done
+    [[ -d "$NVM_DIR/versions/node/$_nvm_default/bin" ]] && \
+        export PATH="$NVM_DIR/versions/node/$_nvm_default/bin:$PATH"
+    unset _nvm_default
+fi
 nvm() {
     unfunction nvm
     [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
