@@ -94,16 +94,14 @@ if [ $commands[pyenv] ]; then
     eval "$(pyenv virtualenv-init -)"
 fi
 
-# NVM — lazy load to avoid slow init in Zellij/multiplexer panes
+# NVM — lazy load the shell function only; node/npm/npx use inherited PATH
 export NVM_DIR="$HOME/.nvm"
-_nvm_load() {
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+nvm() {
+    unfunction nvm
+    [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+    [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
+    nvm "$@"
 }
-nvm() { unfunction nvm node npm npx 2>/dev/null; _nvm_load; nvm "$@"; }
-node() { unfunction nvm node npm npx 2>/dev/null; _nvm_load; node "$@"; }
-npm() { unfunction nvm node npm npx 2>/dev/null; _nvm_load; npm "$@"; }
-npx() { unfunction nvm node npm npx 2>/dev/null; _nvm_load; npx "$@"; }
 
 # direnv
 if [ $commands[direnv] ]; then eval "$(direnv hook zsh)"; fi
