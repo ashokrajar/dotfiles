@@ -60,6 +60,7 @@
     status                  # exit code of the last command
     command_execution_time  # duration of the last command
     background_jobs         # presence of background jobs
+    teleport                # teleport session expiry
     direnv                  # direnv status (https://direnv.net/)
     # terraform_version     # terraform version (https://www.terraform.io)
     asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
@@ -1651,6 +1652,49 @@
   # typeset -g POWERLEVEL9K_TIME_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # Custom prefix.
   # typeset -g POWERLEVEL9K_TIME_PREFIX='%fat '
+
+  # Teleport session expiry segment. Reads the TLS cert directly (no network) and caches the
+  # result. Color: green (>1h), amber (15-60m), red (<15m). Hidden when not logged in.
+  function prompt_teleport() {
+    local cache=/tmp/.p10k_tsh_expiry
+    local profile_file=~/.tsh/current-profile
+    [[ -f $profile_file ]] || return
+    local profile=$(<$profile_file)
+    local user
+    user=$(awk '/^user:/{print $2}' ~/.tsh/${profile}.yaml 2>/dev/null)
+    [[ -n $user ]] || return
+    local cert=~/.tsh/keys/$profile/$user.crt
+    [[ -f $cert ]] || return
+
+    local exp_epoch
+    if [[ -f $cache && $cache -nt $cert ]]; then
+      exp_epoch=$(<$cache)
+    else
+      local not_after
+      not_after=$(command openssl x509 -enddate -noout -in $cert 2>/dev/null)
+      not_after=${not_after#notAfter=}
+      [[ -n $not_after ]] || return
+      exp_epoch=$(command date -j -f "%b %e %H:%M:%S %Y %Z" "$not_after" "+%s" 2>/dev/null)
+      [[ -n $exp_epoch ]] || return
+      print -n $exp_epoch >$cache
+    fi
+
+    local remaining=$(( exp_epoch - EPOCHSECONDS ))
+    (( remaining > 0 )) || return
+
+    local hours=$(( remaining / 3600 ))
+    local mins=$(( (remaining % 3600) / 60 ))
+    local text
+    (( hours > 0 )) && text="${hours}h${mins}m" || text="${mins}m"
+
+    local color
+    if (( remaining > 3600 )); then color=76
+    elif (( remaining > 900 )); then color=214
+    else color=196
+    fi
+
+    p10k segment -f $color -i $'\uF023' -t "Bifrost:$text"
+  }
 
   # Example of a user-defined prompt segment. Function prompt_example will be called on every
   # prompt if `example` prompt segment is added to POWERLEVEL9K_LEFT_PROMPT_ELEMENTS or

@@ -2984,7 +2984,7 @@ The script should do this: \(ai.prompt)</string>
 			<key>Show Status Bar</key>
 			<false/>
 			<key>Silence Bell</key>
-			<false/>
+			<true/>
 			<key>Smart Cursor Color</key>
 			<true/>
 			<key>Smart Cursor Color (Dark)</key>
@@ -4813,7 +4813,7 @@ The script should do this: \(ai.prompt)</string>
 			<key>Show Status Bar</key>
 			<false/>
 			<key>Silence Bell</key>
-			<false/>
+			<true/>
 			<key>Smart Cursor Color</key>
 			<true/>
 			<key>Smart Cursor Color (Dark)</key>
