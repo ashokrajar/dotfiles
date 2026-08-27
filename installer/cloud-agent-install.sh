@@ -99,7 +99,30 @@ mkdir -p "${HOME}/.ssh" && chmod 700 "${HOME}/.ssh"
 "${REPO_DIR}/installer/linkfiles.sh"
 
 # ---------------------------------------------------------------------------
-# 6. Neovim plugins (best-effort; never fail the install)
+# 6. Keep git usable for Cloud Agents
+#
+#    installer/linkfiles.sh symlinks ~/.gitconfig straight at the repo file.
+#    Inside a Cloud Agent that is harmful: it discards the git credentials the
+#    agent needs to push, and any `git config --global ...` would then write
+#    back into the tracked repository. Replace the symlink with a real global
+#    config that *includes* the dotfiles gitconfig (so the settings still
+#    apply) and restore the GitHub credential helper via the gh CLI.
+# ---------------------------------------------------------------------------
+log "Preserving git credentials"
+if [[ -L "${HOME}/.gitconfig" ]]; then
+    rm -f "${HOME}/.gitconfig"
+    cat >"${HOME}/.gitconfig" <<EOF
+[include]
+	path = ${HOME}/.dotfiles/git/gitconfig
+EOF
+fi
+if command -v gh >/dev/null 2>&1; then
+    gh auth setup-git >/dev/null 2>&1 || \
+        echo "WARN: 'gh auth setup-git' failed; git push may need manual credentials." >&2
+fi
+
+# ---------------------------------------------------------------------------
+# 7. Neovim plugins (best-effort; never fail the install)
 # ---------------------------------------------------------------------------
 log "Installing Neovim plugins (best-effort)"
 if ! nvim --headless "+PlugInstall --sync" +qa >/dev/null 2>&1; then
