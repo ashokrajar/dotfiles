@@ -96,6 +96,13 @@ log "Creating directories and linking dotfiles"
 mkdir -p "${HOME}/bin" "${HOME}/.config/nvim" "${HOME}/.tmux/plugins/tmp" \
     "${HOME}/gopaths/global" "${HOME}/.ipython/profile_default" "${HOME}/.warp"
 mkdir -p "${HOME}/.ssh" && chmod 700 "${HOME}/.ssh"
+# installer/linkfiles.sh links the ~/.warp/themes directory with `ln -sf`.
+# On a second run ~/.warp/themes already resolves to a directory, so `ln -sf`
+# would nest the link *inside* the repo (creating warp/themes/themes and a
+# filesystem loop). Drop the existing dir-symlink first and clean any stray
+# nested link so linking stays idempotent and never pollutes the repo.
+[[ -L "${HOME}/.warp/themes" ]] && rm -f "${HOME}/.warp/themes"
+rm -f "${REPO_DIR}/warp/themes/themes"
 "${REPO_DIR}/installer/linkfiles.sh"
 
 # ---------------------------------------------------------------------------
