@@ -122,7 +122,24 @@ if command -v gh >/dev/null 2>&1; then
 fi
 
 # ---------------------------------------------------------------------------
-# 7. Neovim plugins (best-effort; never fail the install)
+# 7. Neovim Python provider (best-effort)
+#    nvim/local_init.vim sets g:python3_host_prog to the pyenv shim, and
+#    nvim/coc-settings.json points python at a dedicated ~/.pyenv/versions/nvim
+#    virtualenv. Provision both so the python3 host loads without errors.
+# ---------------------------------------------------------------------------
+log "Configuring Neovim Python provider (best-effort)"
+pyenv rehash || true
+"${PYENV_ROOT}/versions/${PYTHON_VERSION}/bin/pip" install --quiet pynvim >/dev/null 2>&1 || \
+    echo "WARN: could not install pynvim into the host interpreter." >&2
+if ! pyenv virtualenvs --bare 2>/dev/null | grep -qx nvim; then
+    pyenv virtualenv "${PYTHON_VERSION}" nvim >/dev/null 2>&1 || true
+fi
+if [[ -x "${PYENV_ROOT}/versions/nvim/bin/pip" ]]; then
+    "${PYENV_ROOT}/versions/nvim/bin/pip" install --quiet pynvim jedi >/dev/null 2>&1 || true
+fi
+
+# ---------------------------------------------------------------------------
+# 8. Neovim plugins (best-effort; never fail the install)
 # ---------------------------------------------------------------------------
 log "Installing Neovim plugins (best-effort)"
 if ! nvim --headless "+PlugInstall --sync" +qa >/dev/null 2>&1; then
