@@ -54,6 +54,33 @@ The script should do this: \(ai.prompt)</string>
 	<false/>
 	<key>ClosingHotkeySwitchesSpaces</key>
 	<true/>
+	<key>CodeReviewSavedPrompts</key>
+	<data>
+	W3sidXVpZCI6IjRCNkQxMkE4LTZGOEItNDg2Ny1BNjIxLTY1OEU1QkFBMTRFOCIsInRl
+	eHQiOiJSZXZpZXcgdGhlIHBlbmRpbmcgY2hhbmdlcyBpbiB0aGlzIHJlcG8uIEZsYWcg
+	aXNzdWVzIGEgY2FyZWZ1bCBtYWludGFpbmVyIHdvdWxkIGJsb2NrIG9uIGJlZm9yZSBt
+	ZXJnZSwgaW4gcm91Z2hseSB0aGlzIG9yZGVyOlxuICAxLiBDb3JyZWN0bmVzcyDigJQg
+	bG9naWMgZXJyb3JzLCBicm9rZW4gaW52YXJpYW50cywgbWlzc2VkIGVkZ2UgY2FzZXMs
+	IG9mZi1ieS1vbmUsIHJhY2VzLCBsaWZldGltZVwvbWVtb3J5IGJ1Z3MsIGVycm9yIHBh
+	dGhzIHRoYXQgc3dhbGxvdyBmYWlsdXJlcy5cbiAgMi4gU2VjdXJpdHkg4oCUIGluamVj
+	dGlvbiwgYXV0aG5cL2F1dGh6IG1pc3Rha2VzLCBzZWNyZXQgaGFuZGxpbmcsIHVuc2Fm
+	ZSBkZXNlcmlhbGl6YXRpb24sIHVuc2FmZSBkZWZhdWx0cywgVE9DVE9VLlxuICAzLiBS
+	ZWxpYWJpbGl0eSAmIHBlcmZvcm1hbmNlIOKAlCBibG9ja2luZyB0aGUgd3JvbmcgdGhy
+	ZWFkLCB1bmJvdW5kZWQgcmVzb3VyY2UgdXNlLCBhY2NpZGVudGFsIE8oTsKyKSwgcmV0
+	cmllcyB3aXRob3V0IGJhY2tvZmYsIHNpbGVudCBmYWlsdXJlIHBhdGhzLlxuICA0LiBD
+	b250cmFjdCByaXNrIOKAlCBiZWhhdmlvciBjaGFuZ2VzIGNhbGxlcnMgcmVseSBvbiwg
+	c2lsZW50bHkgY2hhbmdlZCBkZWZhdWx0cywgYnJva2VuIGJhY2t3YXJkIGNvbXBhdGli
+	aWxpdHksIG1pc3NpbmcgbWlncmF0aW9ucy5cblxuRm9yIGVhY2ggZmluZGluZyBjaXRl
+	IGBmaWxlOmxpbmVgLCBleHBsYWluICp3aHkqIGl0IGlzIHdyb25nIChub3Qgd2hhdCB0
+	aGUgY29kZSBkb2VzKSwgYW5kIHByb3Bvc2UgYSBjb25jcmV0ZSBmaXggd2hlbiBvbmUg
+	aXMgb2J2aW91cy4gQmUgY2FsaWJyYXRlZDogaWYgYSBmaW5kaW5nIGlzIG5vdCBoaWdo
+	LWNvbmZpZGVuY2UsIHNheSBzbyBvciBza2lwIGl0LiBWZXJpZnkgY2xhaW1zIGFnYWlu
+	c3QgdGhlIGFjdHVhbCBjb2RlIHJhdGhlciB0aGFuIGluZmVycmluZyBmcm9tIG5hbWVz
+	LlxuXG5Ta2lwIHB1cmUgc3R5bGUsIGZvcm1hdHRpbmcsIG5hbWluZywgYW5kIGFueXRo
+	aW5nIGEgbGludGVyIG9yIENJIGFscmVhZHkgZW5mb3JjZXMuXG5cbklmIHlvdSBmaW5k
+	IG5vdGhpbmcgd29ydGggZml4aW5nLCBzYXkgc28gcGxhaW5seS4iLCJuYW1lIjoiRGVm
+	YXVsdCJ9XQ==
+	</data>
 	<key>CommandSelection</key>
 	<true/>
 	<key>Control</key>
@@ -1577,7 +1604,7 @@ The script should do this: \(ai.prompt)</string>
 	<key>Default Bookmark Guid</key>
 	<string>CA38C801-FB88-4EED-88AD-E0A07DCCF3A6</string>
 	<key>Default Browser Profile Guid</key>
-	<string>C0880A91-DF2B-45CF-A5B2-4FC3DD1ECB4A</string>
+	<string>9B3F869E-3B72-44AB-9E43-0C3A4682FC59</string>
 	<key>Default Toolbelt Width</key>
 	<real>250</real>
 	<key>DimBackgroundWindows</key>
@@ -3515,6 +3542,50 @@ The script should do this: \(ai.prompt)</string>
 					<key>regex</key>
 					<string>(?i)debug|trace|traces</string>
 				</dict>
+				<dict>
+					<key>action</key>
+					<string>iTermEnterWorkgroupTrigger</string>
+					<key>contentregex</key>
+					<string></string>
+					<key>disabled</key>
+					<false/>
+					<key>eventParams</key>
+					<dict>
+						<key>jobName</key>
+						<string>claude</string>
+					</dict>
+					<key>matchType</key>
+					<integer>113</integer>
+					<key>parameter</key>
+					<string>builtin.claudeCode</string>
+					<key>partial</key>
+					<false/>
+					<key>regex</key>
+					<string></string>
+				</dict>
+				<dict>
+					<key>action</key>
+					<string>iTermExitWorkgroupTrigger</string>
+					<key>contentregex</key>
+					<string></string>
+					<key>disabled</key>
+					<false/>
+					<key>eventParams</key>
+					<dict>
+						<key>jobName</key>
+						<string>claude</string>
+						<key>leaderOnly</key>
+						<true/>
+					</dict>
+					<key>matchType</key>
+					<integer>114</integer>
+					<key>parameter</key>
+					<string></string>
+					<key>partial</key>
+					<false/>
+					<key>regex</key>
+					<string></string>
+				</dict>
 			</array>
 			<key>Unicode Normalization</key>
 			<integer>0</integer>
@@ -5129,6 +5200,50 @@ The script should do this: \(ai.prompt)</string>
 					<key>regex</key>
 					<string>(?i)debug|trace|traces</string>
 				</dict>
+				<dict>
+					<key>action</key>
+					<string>iTermEnterWorkgroupTrigger</string>
+					<key>contentregex</key>
+					<string></string>
+					<key>disabled</key>
+					<false/>
+					<key>eventParams</key>
+					<dict>
+						<key>jobName</key>
+						<string>claude</string>
+					</dict>
+					<key>matchType</key>
+					<integer>113</integer>
+					<key>parameter</key>
+					<string>builtin.claudeCode</string>
+					<key>partial</key>
+					<false/>
+					<key>regex</key>
+					<string></string>
+				</dict>
+				<dict>
+					<key>action</key>
+					<string>iTermExitWorkgroupTrigger</string>
+					<key>contentregex</key>
+					<string></string>
+					<key>disabled</key>
+					<false/>
+					<key>eventParams</key>
+					<dict>
+						<key>jobName</key>
+						<string>claude</string>
+						<key>leaderOnly</key>
+						<true/>
+					</dict>
+					<key>matchType</key>
+					<integer>114</integer>
+					<key>parameter</key>
+					<string></string>
+					<key>partial</key>
+					<false/>
+					<key>regex</key>
+					<string></string>
+				</dict>
 			</array>
 			<key>Unicode Normalization</key>
 			<integer>0</integer>
@@ -5791,7 +5906,52 @@ The script should do this: \(ai.prompt)</string>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Triggers</key>
-			<array/>
+			<array>
+				<dict>
+					<key>action</key>
+					<string>iTermEnterWorkgroupTrigger</string>
+					<key>contentregex</key>
+					<string></string>
+					<key>disabled</key>
+					<false/>
+					<key>eventParams</key>
+					<dict>
+						<key>jobName</key>
+						<string>claude</string>
+					</dict>
+					<key>matchType</key>
+					<integer>113</integer>
+					<key>parameter</key>
+					<string>builtin.claudeCode</string>
+					<key>partial</key>
+					<false/>
+					<key>regex</key>
+					<string></string>
+				</dict>
+				<dict>
+					<key>action</key>
+					<string>iTermExitWorkgroupTrigger</string>
+					<key>contentregex</key>
+					<string></string>
+					<key>disabled</key>
+					<false/>
+					<key>eventParams</key>
+					<dict>
+						<key>jobName</key>
+						<string>claude</string>
+						<key>leaderOnly</key>
+						<true/>
+					</dict>
+					<key>matchType</key>
+					<integer>114</integer>
+					<key>parameter</key>
+					<string></string>
+					<key>partial</key>
+					<false/>
+					<key>regex</key>
+					<string></string>
+				</dict>
+			</array>
 			<key>Unlimited Scrollback</key>
 			<true/>
 			<key>Use Bold Font</key>
@@ -7704,8 +7864,8 @@ The script should do this: \(ai.prompt)</string>
 	<true/>
 	<key>ToolbeltTools</key>
 	<array>
-		<string>Notes</string>
-		<string>Codecierge</string>
+		<string>Session Status</string>
+		<string>Snippets</string>
 	</array>
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<true/>
@@ -7744,6 +7904,37 @@ The script should do this: \(ai.prompt)</string>
 	<integer>0</integer>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>Workgroups</key>
+	<data>
+	W3sidW5pcXVlSWRlbnRpZmllciI6ImJ1aWx0aW4uY2xhdWRlQ29kZSIsIm5hbWUiOiJD
+	bGF1ZGUgQ29kZSIsInNlc3Npb25zIjpbeyJraW5kIjp7ImtpbmQiOiJyb290In0sInBl
+	ckZpbGVDb21tYW5kIjoiIiwidXJsU3RyaW5nIjoiIiwidW5pcXVlSWRlbnRpZmllciI6
+	ImJ1aWx0aW4uY2xhdWRlQ29kZS5tYWluIiwiY29tbWFuZCI6IiIsInRvb2xiYXJJdGVt
+	cyI6W3sia2luZCI6Im1vZGVTd2l0Y2hlciJ9LHsia2luZCI6ImdpdFN0YXR1cyJ9LHsi
+	a2luZCI6ImF1dG9SZXF1ZXN0UmV2aWV3V2hlbklkbGUifV0sIm1vZGUiOiJyZWd1bGFy
+	IiwiZGlzcGxheU5hbWUiOiJDaGF0In0seyJraW5kIjp7ImtpbmQiOiJwZWVyIn0sInBl
+	ckZpbGVDb21tYW5kIjoiZ2l0IGRpZmZ0b29sIC15IC14IHZpbWRpZmYgXFwoZ2l0QmFz
+	ZSkgLS0gXFwoZmlsZSkiLCJ1cmxTdHJpbmciOiIiLCJ1bmlxdWVJZGVudGlmaWVyIjoi
+	YnVpbHRpbi5jbGF1ZGVDb2RlLmRpZmYiLCJwYXJlbnRJRCI6ImJ1aWx0aW4uY2xhdWRl
+	Q29kZS5tYWluIiwiY29tbWFuZCI6ImdpdCBkaWZmdG9vbCAteSAteCB2aW1kaWZmIFxc
+	KGdpdEJhc2UpIiwidG9vbGJhckl0ZW1zIjpbeyJraW5kIjoibW9kZVN3aXRjaGVyIn0s
+	eyJraW5kIjoiY2hhbmdlZEZpbGVTZWxlY3RvciJ9LHsia2luZCI6ImdpdEJhc2VTZWxl
+	Y3RvciJ9LHsiZm9yd2FyZFNob3J0Y3V0Ijp7InNlcmlhbGl6ZWQiOiIweGY3MDMtMHgz
+	NDAwMDAtMHg3YyJ9LCJraW5kIjoibmF2aWdhdGlvbiIsInJlbG9hZFNob3J0Y3V0Ijp7
+	InNlcmlhbGl6ZWQiOiIweDcyLTB4MTAwMDAwLTB4ZiJ9LCJiYWNrU2hvcnRjdXQiOnsi
+	c2VyaWFsaXplZCI6IjB4ZjcwMi0weDM0MDAwMC0weDdiIn19XSwibW9kZSI6ImRpZmYi
+	LCJkaXNwbGF5TmFtZSI6IkRpZmYifSx7ImtpbmQiOnsia2luZCI6InBlZXIifSwicGVy
+	RmlsZUNvbW1hbmQiOiIiLCJ1cmxTdHJpbmciOiIiLCJ1bmlxdWVJZGVudGlmaWVyIjoi
+	YnVpbHRpbi5jbGF1ZGVDb2RlLnJldmlldyIsInBhcmVudElEIjoiYnVpbHRpbi5jbGF1
+	ZGVDb2RlLm1haW4iLCJjb21tYW5kIjoiY2xhdWRlIFxcKGNvZGVSZXZpZXdQcm9tcHQp
+	IC0tYXBwZW5kLXN5c3RlbS1wcm9tcHQtZmlsZSAnXFwoY29kZVJldmlld1N5c3RlbVBy
+	b21wdEZpbGUpJyAtLXNldHRpbmdzICdcXChpdGVybTIuYXBwQnVuZGxlUGF0aClcL0Nv
+	bnRlbnRzXC9SZXNvdXJjZXNcL2NvZGUtcmV2aWV3LXNldHRpbmdzLnR4dCciLCJ0b29s
+	YmFySXRlbXMiOlt7ImtpbmQiOiJtb2RlU3dpdGNoZXIifSx7ImtpbmQiOiJyZWxvYWQi
+	LCJzaG9ydGN1dCI6eyJzZXJpYWxpemVkIjoiMHg3Mi0weDEwMDAwMC0weGYifX0seyJr
+	aW5kIjoiYXV0b1NlbmRDbGlwcGluZ3NXaGVuSWRsZSJ9XSwibW9kZSI6ImNvZGVSZXZp
+	ZXciLCJkaXNwbGF5TmFtZSI6IkNvZGUgUmV2aWV3In1dfV0=
+	</data>
 	<key>com.apple.WebPrivacy.ResourceMonitorURLsVersion</key>
 	<string>qrsAAAGXnXBrwGxMO6s=</string>
 	<key>disableMetalWhenUnplugged</key>
