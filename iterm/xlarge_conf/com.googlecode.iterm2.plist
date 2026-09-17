@@ -3,11 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>AI High Effort Enabled</key>
-	<false/>
+	<true/>
 	<key>AI Prompt</key>
 	<string>Return commands suitable for copy/pasting into \(shell) on \(uname). Do NOT include commentary NOR Markdown triple-backtick code blocks as your whole response will be copied into my terminal automatically.
 
 The script should do this: \(ai.prompt)</string>
+	<key>AI Web Search Enabled</key>
+	<true/>
 	<key>AIFeatureFunctionCalling</key>
 	<true/>
 	<key>AIFeatureHostedCodeInterpeter</key>
@@ -1604,7 +1606,7 @@ The script should do this: \(ai.prompt)</string>
 	<key>Default Bookmark Guid</key>
 	<string>CA38C801-FB88-4EED-88AD-E0A07DCCF3A6</string>
 	<key>Default Browser Profile Guid</key>
-	<string>9B3F869E-3B72-44AB-9E43-0C3A4682FC59</string>
+	<string>AF991BB4-3169-4B3B-B4F2-50C048822E3D</string>
 	<key>Default Toolbelt Width</key>
 	<real>250</real>
 	<key>DimBackgroundWindows</key>
