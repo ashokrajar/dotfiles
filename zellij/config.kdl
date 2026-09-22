@@ -1,6 +1,9 @@
 // Personal keybinding overrides and additions.
 // Inherit Zellij's built-in defaults; a commented 0.45.1 reference follows.
 keybinds {
+    // iTerm sends Alt+Right as Alt+f for forward-word navigation.
+    // Remove the inherited floating-pane shortcut; use Alt+p instead.
+    unbind "Alt f"
     pane {
         unbind "f"
         bind "z" { ToggleFocusFullscreen; SwitchToMode "normal"; }
