@@ -34,6 +34,13 @@ ln -sf ~/.dotfiles/zsh/p10k-warp.zsh ~/.p10k-warp.zsh
 # warp
 ln -sf ~/.dotfiles/warp/themes ~/.warp/themes
 
+# zellij (whole directory; move an existing real directory aside first)
+if [[ -d ~/.config/zellij && ! -L ~/.config/zellij ]]; then
+    mv ~/.config/zellij ~/.config/zellij.bak."$(date +%Y%m%d%H%M%S)"
+fi
+mkdir -p ~/.config
+ln -sfn ~/.dotfiles/zellij ~/.config/zellij
+
 # OS specific zshrc
 if [[ "${OSTYPE}" == darwin* ]]; then
     ln -sf ~/.dotfiles/zsh/maczshrc ~/.maczshrc

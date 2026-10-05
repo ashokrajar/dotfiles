@@ -1,0 +1,30 @@
+// IDE layout: Neovim on top, a shell below, lazygit in a hidden floating pane.
+// New session: command zellij --new-session-with-layout ide   (`command` skips the `zellij -l welcome` alias)
+// Inside a session: zellij action new-tab --layout ide
+// Alt p toggles the floating lazygit pane.
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    tab name="code" focus=true hide_floating_panes=true {
+        pane split_direction="horizontal" {
+            pane name="editor" command="nvim" size="75%" focus=true
+            pane name="shell" size="25%"
+        }
+        floating_panes {
+            pane name="lazygit" command="lazygit" {
+                x "5%"
+                y "5%"
+                width "90%"
+                height "90%"
+            }
+        }
+    }
+}

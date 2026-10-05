@@ -484,7 +484,8 @@ pane_frame_style "full"
 
 // Path to the default editor to use to edit pane scrollbuffer
 // Default: $EDITOR or $VISUAL
-// scrollback_editor "/usr/bin/vim"
+// Ctrl s → e opens the pane's scrollback in Neovim
+scrollback_editor "nvim"
 
 // A fixed name to always give the Zellij session.
 // Consider also setting `attach_to_session true,`
