@@ -34,6 +34,10 @@ make update-links
 make update-vim-plugins
 ```
 
+# Editor setup (Neovim + Zellij + iTerm2)
+
+See [docs/neovim-zellij-iterm.md](docs/neovim-zellij-iterm.md) for the LazyVim migration, the Zellij IDE layout and the remaining iTerm2/Zellij integration steps.
+
 # UnInstall
 
 ```bash

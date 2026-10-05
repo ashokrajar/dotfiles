@@ -7,6 +7,7 @@ Personal dotfiles and configuration for macOS (primary), Ubuntu, and Arch Linux.
 | Directory | Purpose |
 |-----------|---------|
 | `bin/` | Custom scripts added to `~/bin` |
+| `docs/` | Setup notes (e.g. Neovim + Zellij + iTerm2 migration) |
 | `common/` | Shared configs: tmux, aliases, helper functions, screenrc |
 | `fonts/` | Font files |
 | `git/` | `gitconfig`, `gitignore_global` |
@@ -46,6 +47,7 @@ make clean         # Remove all linked/created dirs
 - `~/.config/nvim/{init.vim,local_init.vim,local_bundles.vim,coc-settings.json}` → `nvim/*` (individually linked)
 - `~/.ssh/config` → `ssh/config`
 - `~/.warp/themes` → `warp/themes`
+- `~/.config/zellij` → `zellij/` (whole directory; an existing real directory is moved to `~/.config/zellij.bak.<timestamp>`)
 - `~/.tmux.conf`, `~/.local_aliases`, `~/.shell_helper_functions.sh`, `~/.screenrc` → `common/*`
 - `~/.ipython/profile_default/ipython_config.py` → `ipython/ipython_config.py`
 
@@ -64,7 +66,7 @@ git diff --check                 # whitespace errors
 ## Notes
 
 - Shell: zsh with zprezto framework and Powerlevel10k prompt
-- Editor: Cursor (default), Neovim available as `vim`
+- Editor: Cursor for GUI (`edit`/`view` aliases); `EDITOR`/`VISUAL` are `nvim` (set in `zsh/zprofile`). Neovim is migrating to LazyVim — see `docs/neovim-zellij-iterm.md`
 - macOS is the primary development platform. The Linux path only implements the `apt` branch (`installer/linux-install.sh`) — `yum` and `pacman` branches exit with "Not yet implemented" despite `pacman/` scripts existing in `installer/`.
 - Do not commit secrets to `zsh/zshrc` — source a local untracked file (e.g. `~/.user_env_pass`) instead
 - `make clean` is destructive beyond symlinks: it recursively removes `~/bin`, `~/gopaths/global`, `~/.config/nvim`, `~/.zprezto`, `~/.tmux`, `~/.emacs.d`, and `~/.doom.d`. Treat `make install`/`make clean` as machine-changing operations, not test commands — inspect scripts and existing destinations before running them.
