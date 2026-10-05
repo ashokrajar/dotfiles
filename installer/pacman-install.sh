@@ -18,8 +18,8 @@ sudo pacman -S --noconfirm --needed base-devel net-tools which zsh sudo inetutil
 sudo pacman -S --noconfirm --needed neovim
 
 # Git
-sudo pacman -S --noconfirm --needed git
-yay -S --removemake --answerclean A --answerdiff N --noconfirm --needed legit git-chglog git-secrets gitui
+sudo pacman -S --noconfirm --needed git lazygit
+yay -S --removemake --answerclean A --answerdiff N --noconfirm --needed legit git-chglog git-secrets
 # git-flow
 
 # Languages

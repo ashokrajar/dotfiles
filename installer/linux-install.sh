@@ -7,7 +7,7 @@ hash pacman 2 >/dev/null && PKG_CMD="packman"
 case $PKG_CMD in
 apt) 
     installer/apt-install.sh
-    installer/gitui-install.sh
+    installer/lazygit-install.sh
     ;; 
 yum) 
     echo -en "\nUnSupported Operating System\n\nNot yet implemented\n\n"
